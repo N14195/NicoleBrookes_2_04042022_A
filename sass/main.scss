@@ -1,15 +1,22 @@
 
-$body-text-font: "Roboto", sans-serif;
-$logo-font: "Shrikhand", cursive;
+$font-main: "Roboto", sans-serif;
+$font-logo: "Shrikhand", cursive;
 
-$font-color-main:black;
 
-$location-bg:#eaeaea;
-$title-bg:#f6f6f6;
+$color-primary:#9356DC;
+$color-secondary:#FF79DA;
+$color-tertiary:#99E2D0;
+$gradient:linear-gradient(to bottom right, $color-secondary, $color-primary);
+
+$color-font-main:black;
+$color-font-highlight:white;
+
+$color-location-bg:#eaeaea;
+$color-title-bg:#f6f6f6;
 
 body {
-    font-family: $body-text-font;
-    color: $font-color-main;
+    font-family: $font-main;
+    color: $color-font-main;
     margin:0;
     display:flex;
     flex-flow: column nowrap;
@@ -54,18 +61,21 @@ header img {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background: $location-bg;
+    background: $color-location-bg;
     width:100%;
-    color: lighten($font-color-main, 21%);
+    color: lighten($color-font-main, 21%);
 }
 #title {
-    background:$title-bg;
+    background:$color-title-bg;
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
     width: 100%;
     padding: 45px 0 55px;
 }
-
+button {
+    color:$color-font-highlight;
+    background:$gradient;
+}
 
     

@@ -65,4 +65,9 @@ header img {
   padding: 45px 0 55px;
 }
 
+button {
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+
 /*# sourceMappingURL=style.css.map */
