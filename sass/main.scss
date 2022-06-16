@@ -1,4 +1,13 @@
+
+$body-text-font: "Roboto", sans-serif;
+$logo-font: "Shrikhand", cursive;
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: $body-text-font;
+    color: black;
+  }
+header h1 {
+    font-family: $logo-font;
+    font-size: 20px;
 }
-$logo-font: "font-family: 'Shrikhand', cursive;"
+    
