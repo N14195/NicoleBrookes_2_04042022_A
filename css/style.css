@@ -11,6 +11,28 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
+#location h1 {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 20px;
+}
+
+#title h1 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+#title h2 {
+  font-size: 16px;
+  font-weight: 200;
+  text-align: center;
+  padding: 25px 45px 30px;
+}
+
 header {
   width: 100%;
   display: flex;
@@ -24,12 +46,6 @@ header img {
   padding: 22px 0 12px;
 }
 
-#location h1 {
-  font-weight: 500;
-  font-size: 15px;
-  padding: 20px;
-}
-
 #location {
   display: flex;
   flex-flow: row nowrap;
@@ -37,7 +53,16 @@ header img {
   align-items: center;
   background: #eaeaea;
   width: 100%;
-  color: #353535;
+  color: #363636;
+}
+
+#title {
+  background: #f6f6f6;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  padding: 45px 0 55px;
 }
 
 /*# sourceMappingURL=style.css.map */
