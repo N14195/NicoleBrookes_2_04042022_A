@@ -3,20 +3,21 @@ $font-main: "Roboto", sans-serif;
 $font-logo: "Shrikhand", cursive;
 
 
-$color-primary:#9356DC;
-$color-secondary:#FF79DA;
-$color-tertiary:#99E2D0;
-$gradient:linear-gradient(to bottom right, $color-secondary, $color-primary);
+$clr-primary:#9356DC;
+$clr-secondary:#FF79DA;
+$clr-tertiary:#99E2D0;
+$gradient:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
 
-$color-font-main:black;
-$color-font-highlight:white;
+$clr-font-main:black;
+$clr-font-white:white;
 
-$color-location-bg:#eaeaea;
-$color-title-bg:#f6f6f6;
+$clr-med-bg:#eaeaea;
+$clr-light-bg:#f6f6f6;
+$clr-dark-bg:#353535;
 
 body {
     font-family: $font-main;
-    color: $color-font-main;
+    color: $clr-font-main;
     margin:0;
     display:flex;
     flex-flow: column nowrap;
@@ -61,12 +62,12 @@ header img {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background: $color-location-bg;
+    background: $clr-light-bg;
     width:100%;
-    color: lighten($color-font-main, 21%);
+    color: lighten($clr-font-main, 21%);
 }
 #title {
-    background:$color-title-bg;
+    background:$clr-med-bg;
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
@@ -74,8 +75,26 @@ header img {
     padding: 45px 0 55px;
 }
 button {
-    color:$color-font-highlight;
+    color:$clr-font-white;
     background:$gradient;
 }
 
-    
+footer {
+    width:100%;
+    background:$clr-dark-bg;
+    color:$clr-font-white;
+}
+footer img {
+    filter: invert(1);
+    height:18px;
+    padding:26px 25px 23px;
+}
+ul {
+    padding:0 25px 38px;
+    margin:0;
+}
+li {
+    list-style: none;
+    font-size: 13px;
+    padding:0 0 12px;
+}

@@ -51,13 +51,13 @@ header img {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: #eaeaea;
+  background: #f6f6f6;
   width: 100%;
   color: #363636;
 }
 
 #title {
-  background: #f6f6f6;
+  background: #eaeaea;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -68,6 +68,29 @@ header img {
 button {
   color: white;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+
+footer {
+  width: 100%;
+  background: #353535;
+  color: white;
+}
+
+footer img {
+  filter: invert(1);
+  height: 18px;
+  padding: 26px 25px 23px;
+}
+
+ul {
+  padding: 0 25px 38px;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 13px;
+  padding: 0 0 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
