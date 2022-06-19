@@ -1,12 +1,14 @@
-
+/*FONTS*/
 $font-main: "Roboto", sans-serif;
 $font-logo: "Shrikhand", cursive;
 
-
+/*COLOURS*/
 $clr-primary:#9356DC;
 $clr-secondary:#FF79DA;
 $clr-tertiary:#99E2D0;
+
 $gradient:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+$gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
 $clr-font-main:black;
 $clr-font-white:white;
@@ -14,6 +16,15 @@ $clr-font-white:white;
 $clr-med-bg:#eaeaea;
 $clr-light-bg:#f6f6f6;
 $clr-dark-bg:#353535;
+
+h1 {
+    margin:0;
+    font-size:20px;
+}
+h2 {
+    margin:0;
+    font-size:16px;
+}
 
 body {
     font-family: $font-main;
@@ -23,38 +34,17 @@ body {
     flex-flow: column nowrap;
     align-items: center;
   }
-h1 {
-    margin:0;
-}
-h2 {
-    margin:0;
-}
-#location h1 {
-    font-weight:500;
-    font-size:15px;
-    padding:20px;
-}
-#title h1 {
-    font-size:20px;
-    padding-bottom:25px;
-}
-#title h2 {
-    font-size:16px;
-    font-weight:200;
-    text-align: center;
-    padding:25px 45px 30px;
 
-}
 header {
     width:100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     z-index: 1;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);}
-
-header img {
-    padding: 22px 0 12px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    & img {
+        padding: 22px 0 12px;
+    }
 }
 
 #location {
@@ -65,6 +55,11 @@ header img {
     background: $clr-light-bg;
     width:100%;
     color: lighten($clr-font-main, 21%);
+    & h1 {
+        font-weight:500;
+        font-size:15px;
+        padding:20px;
+    }
 }
 #title {
     background:$clr-med-bg;
@@ -73,28 +68,62 @@ header img {
     align-items:center;
     width: 100%;
     padding: 45px 0 55px;
+    & h1 {
+        padding-bottom:25px;
+    }
+    & h2 {
+        font-weight:200;
+        text-align: center;
+        padding:25px 45px 30px;
+    }
+    
 }
 button {
     color:$clr-font-white;
     background:$gradient;
+    border-radius: 30px;
+    padding: 16px 33px;
+    font-size: 14px;
+    border-style: none;
+    box-shadow: 1px 4px 8px 0 rgb(0 0 0 / 25%);
+    position:relative;
+    z-index:1;
+    &:hover{
+        & .button--bg{
+            opacity:1;
+        }
+    }
+    & .button--bg{
+        position:absolute;
+        inset:0;
+        background:$gradient-hover;
+        opacity:0;
+        z-index:-1;
+        border-radius:30px;
+        box-shadow: 2px 4px 12px 0 rgb(0 0 0 / 28%);
+        transition:opacity 150ms;
+    }
 }
 
 footer {
     width:100%;
     background:$clr-dark-bg;
     color:$clr-font-white;
-}
-footer img {
-    filter: invert(1);
-    height:18px;
-    padding:26px 25px 23px;
-}
-ul {
-    padding:0 25px 38px;
-    margin:0;
-}
-li {
-    list-style: none;
-    font-size: 13px;
-    padding:0 0 12px;
+    & .icon {
+        padding-right:12px;
+    }
+    & img {
+        filter: invert(1);
+        height:18px;
+        padding:26px 25px 23px;
+    }
+    & ul {
+        padding:0 25px 38px;
+        margin:0;
+        & li {
+            list-style: none;
+            font-size: 13px;
+            padding:0 0 12px;
+        }
+    }
 }
