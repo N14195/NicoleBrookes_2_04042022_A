@@ -1,3 +1,15 @@
+/*FONTS*/
+/*COLOURS*/
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: black;
@@ -5,32 +17,6 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-}
-
-h1 {
-  margin: 0;
-}
-
-h2 {
-  margin: 0;
-}
-
-#location h1 {
-  font-weight: 500;
-  font-size: 15px;
-  padding: 20px;
-}
-
-#title h1 {
-  font-size: 20px;
-  padding-bottom: 25px;
-}
-
-#title h2 {
-  font-size: 16px;
-  font-weight: 200;
-  text-align: center;
-  padding: 25px 45px 30px;
 }
 
 header {
@@ -41,7 +27,6 @@ header {
   z-index: 1;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-
 header img {
   padding: 22px 0 12px;
 }
@@ -55,6 +40,11 @@ header img {
   width: 100%;
   color: #363636;
 }
+#location h1 {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 20px;
+}
 
 #title {
   background: #eaeaea;
@@ -63,6 +53,14 @@ header img {
   align-items: center;
   width: 100%;
   padding: 45px 0 55px;
+}
+#title h1 {
+  padding-bottom: 25px;
+}
+#title h2 {
+  font-weight: 200;
+  text-align: center;
+  padding: 25px 45px 30px;
 }
 
 button {
@@ -75,19 +73,19 @@ footer {
   background: #353535;
   color: white;
 }
-
+footer .icon {
+  padding-right: 12px;
+}
 footer img {
   filter: invert(1);
   height: 18px;
   padding: 26px 25px 23px;
 }
-
-ul {
+footer ul {
   padding: 0 25px 38px;
   margin: 0;
 }
-
-li {
+footer ul li {
   list-style: none;
   font-size: 13px;
   padding: 0 0 12px;
