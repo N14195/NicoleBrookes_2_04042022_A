@@ -8,6 +8,7 @@ $clr-secondary:#FF79DA;
 $clr-tertiary:#99E2D0;
 
 $gradient:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+$gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
 $clr-font-main:black;
 $clr-font-white:white;
@@ -41,7 +42,6 @@ header {
     justify-content: center;
     z-index: 1;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-
     & img {
         padding: 22px 0 12px;
     }
@@ -81,6 +81,28 @@ header {
 button {
     color:$clr-font-white;
     background:$gradient;
+    border-radius: 30px;
+    padding: 16px 33px;
+    font-size: 14px;
+    border-style: none;
+    box-shadow: 1px 4px 8px 0 rgb(0 0 0 / 25%);
+    position:relative;
+    z-index:1;
+    &:hover{
+        & .button--bg{
+            opacity:1;
+        }
+    }
+    & .button--bg{
+        position:absolute;
+        inset:0;
+        background:$gradient-hover;
+        opacity:0;
+        z-index:-1;
+        border-radius:30px;
+        box-shadow: 2px 4px 12px 0 rgb(0 0 0 / 28%);
+        transition:opacity 150ms;
+    }
 }
 
 footer {
@@ -98,7 +120,6 @@ footer {
     & ul {
         padding:0 25px 38px;
         margin:0;
-        
         & li {
             list-style: none;
             font-size: 13px;
