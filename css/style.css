@@ -93,10 +93,6 @@ button .button--bg {
   transition: opacity 150ms;
 }
 
-.card a {
-  color: black;
-}
-
 footer {
   width: 100%;
   background: #353535;
