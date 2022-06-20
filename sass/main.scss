@@ -14,8 +14,10 @@ $clr-font-main:black;
 $clr-font-white:white;
 
 $clr-med-bg:#eaeaea;
-$clr-light-bg:#f6f6f6;
+
 $clr-dark-bg:#353535;
+$clr-light-bg:#f6f6f6;
+$clr-white-bg:white;
 
 h1 {
     margin:0;
@@ -108,7 +110,30 @@ button {
     }
 }
 
-
+#restaurants{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    width:100%;
+    background:$clr-light-bg;
+}
+.card {
+    width:90%;
+    & img{
+        width:100%;
+        height:175px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit:cover;
+    }
+    & .container{
+        display:flex;
+        flex-flow:column nowrap;
+        background:$clr-white-bg;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
 footer {
     width:100%;
     background:$clr-dark-bg;
