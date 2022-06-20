@@ -19,6 +19,11 @@ $clr-dark-bg:#353535;
 $clr-light-bg:#f6f6f6;
 $clr-white-bg:white;
 
+$shadow-btn:1px 4px 8px 0 rgb(0 0 0 / 25%);
+$shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
+$shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
+$shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
+
 h1 {
     margin:0;
     font-size:20px;
@@ -95,7 +100,7 @@ button {
     padding: 16px 33px;
     font-size: 14px;
     border-style: none;
-    box-shadow: 1px 4px 8px 0 rgb(0 0 0 / 25%);
+    box-shadow:$shadow-btn;
     position:relative;
     z-index:1;
     &:hover{
@@ -110,7 +115,7 @@ button {
         opacity:0;
         z-index:-1;
         border-radius:30px;
-        box-shadow: 2px 4px 12px 0 rgb(0 0 0 / 28%);
+        box-shadow: $shadow-btn-hover;
         transition:opacity 150ms;
     }
 }
@@ -129,6 +134,8 @@ button {
 .card {
     width:90%;
     margin:10px 0;
+    box-shadow:$shadow-card;
+    border-radius:15px;
     & img{
         width:100%;
         height:175px;
@@ -156,10 +163,19 @@ button {
         & p{
             padding: 0 14px 18px;
         }
+        
         & .heart{
             height: 21px;
             padding:24px;
+            z-index:1;
+            &:active{
+                background:$gradient;
+            }
+            }
         }
+    
+    &:hover{
+        box-shadow: $shadow-card-hover;
     }
 }
 footer {
