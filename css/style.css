@@ -15,6 +15,12 @@ a {
   color: black;
 }
 
+p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 300;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: black;
@@ -100,15 +106,21 @@ button .button--bg {
   width: 100%;
   background: #f6f6f6;
 }
+#restaurants h1 {
+  margin: 60px 20px 20px;
+  align-self: flex-start;
+}
 
 .card {
   width: 90%;
+  margin: 10px 0;
 }
 .card img {
   width: 100%;
   height: 175px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  display: block;
   object-fit: cover;
 }
 .card .container {
@@ -117,6 +129,14 @@ button .button--bg {
   background: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.card .container h2 {
+  font-size: 14px;
+  padding: 0;
+  padding: 20px 14px 10px;
+}
+.card .container p {
+  padding: 0 14px 20px;
 }
 
 footer {
