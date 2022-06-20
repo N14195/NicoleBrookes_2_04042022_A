@@ -13,12 +13,12 @@ $gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lig
 $clr-font-main:black;
 $clr-font-white:white;
 
-$clr-med-bg:#eaeaea;
-
 $clr-dark-bg:#353535;
+$clr-med-bg:#eaeaea;
 $clr-light-bg:#f6f6f6;
 $clr-white-bg:white;
 
+$shadow-header:0 2px 4px 0 rgb(0 0 0 / 20%);
 $shadow-btn:1px 4px 8px 0 rgb(0 0 0 / 25%);
 $shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
 $shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
@@ -50,13 +50,28 @@ body {
     align-items: center;
   }
 
+  button {
+    position:relative;
+    z-index:1;
+    &:hover{
+        & .button--bg{
+            opacity:1;
+        }
+    }
+    & .button--bg{
+        position:absolute;
+        inset:0;
+        opacity:0;
+        z-index:-1;
+    }
+}
 header {
     width:100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     z-index: 1;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    box-shadow: $shadow-header;
     & img {
         padding: 22px 0 12px;
     }
@@ -91,32 +106,20 @@ header {
         text-align: center;
         padding:25px 45px 30px;
     }
-    
-}
-button {
-    color:$clr-font-white;
-    background:$gradient;
-    border-radius: 30px;
-    padding: 16px 33px;
-    font-size: 14px;
-    border-style: none;
-    box-shadow:$shadow-btn;
-    position:relative;
-    z-index:1;
-    &:hover{
+    & button{
+        color:$clr-font-white;
+        background:$gradient;
+        border-radius: 30px;
+        padding: 16px 33px;
+        font-size: 14px;
+        border-style: none;
+        box-shadow:$shadow-btn;
         & .button--bg{
-            opacity:1;
+            background:$gradient-hover;
+            border-radius:30px;
+            box-shadow: $shadow-btn-hover;
+            transition:opacity 150ms;
         }
-    }
-    & .button--bg{
-        position:absolute;
-        inset:0;
-        background:$gradient-hover;
-        opacity:0;
-        z-index:-1;
-        border-radius:30px;
-        box-shadow: $shadow-btn-hover;
-        transition:opacity 150ms;
     }
 }
 
@@ -129,6 +132,53 @@ button {
     & h1{
         margin: 60px 20px 20px; 
         align-self: flex-start;
+    }
+}
+#instructions {
+    display: flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    width:100%;
+    padding-bottom:45px;
+    
+    & h1{
+        padding:50px 0 30px 21px;
+        align-self:flex-start;
+    }
+    & div{
+        position:relative;
+        display:flex;
+        flex-flow:row nowrap;
+        align-items:center;
+        background:$clr-light-bg;
+        width: 88%;
+        border-radius: 20px;
+        margin: 0 0 25px 10px;
+        box-shadow:$shadow-card;
+    }
+    & .icon {
+        height: 20px;
+        color:lighten($clr-font-main,49%);
+        padding: 27px 20px 26px 35px;
+    }
+    & h2{
+        font-size:14px;
+        font-weight:500;
+    }
+    & p{
+        position:absolute;
+        left:-10px;
+        font-size:12px;
+        font-weight:400;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width:22px;
+        height:22px;
+        background:$clr-primary;
+        color:$clr-font-white;
+        border-radius:15px;
     }
 }
 .card {
@@ -151,7 +201,7 @@ button {
         background:$clr-white-bg;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        & .left{
+        & .card-text{
             display:flex;
             flex-flow:column nowrap;
         }
@@ -163,21 +213,39 @@ button {
         & p{
             padding: 0 14px 18px;
         }
-        
         & .heart{
             height: 21px;
             padding:24px;
-            z-index:1;
-            &:active{
-                background:$gradient;
-            }
             }
         }
-    
+    & button {
+        position:relative;
+        background: white;
+        border: 0 none transparent;
+        padding: 0;
+        border-radius: 15px;
+        height:70px;
+        &:active{
+            & .button--bg{
+                opacity:1;
+            }
+        }
+        & .button--bg{
+            position:absolute;
+            inset:0;
+            opacity:0;
+            z-index:-1;
+            color:transparent; 
+            -webkit-background-clip:text;
+            background-image: $gradient;
+
+        }
+}
     &:hover{
         box-shadow: $shadow-card-hover;
     }
 }
+
 footer {
     width:100%;
     background:$clr-dark-bg;
