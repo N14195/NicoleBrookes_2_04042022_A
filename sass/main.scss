@@ -163,21 +163,22 @@ button {
         & p{
             padding: 0 14px 18px;
         }
+        
         & .card-heart{
             position:relative;
-            & .card-heart-fill{
-                position:absolute;
-                inset:0;
-                z-index:1;
-            }
+        }
+        & .heart-fill{
+            position:absolute;
+            inset:0;
+            
+            color:transparent; 
+            -webkit-background-clip:text;
+            background-image: $gradient;   
         }
         & .heart{
             height: 21px;
             padding:24px;
-            z-index:2;
-            &:active{
-                background:$gradient;
-            }
+            
             }
         }
     

@@ -148,18 +148,16 @@ button .button--bg {
 .card .container .card-heart {
   position: relative;
 }
-.card .container .card-heart .card-heart-fill {
+.card .container .heart-fill {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 .card .container .heart {
   height: 21px;
   padding: 24px;
-  z-index: 2;
-}
-.card .container .heart:active {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 .card:hover {
   box-shadow: 1px 4px 12px 3px rgba(0, 0, 0, 0.15);
