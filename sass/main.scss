@@ -13,9 +13,8 @@ $gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lig
 $clr-font-main:black;
 $clr-font-white:white;
 
-$clr-med-bg:#eaeaea;
-
 $clr-dark-bg:#353535;
+$clr-med-bg:#eaeaea;
 $clr-light-bg:#f6f6f6;
 $clr-white-bg:white;
 
@@ -136,7 +135,39 @@ header {
     }
 }
 #instructions {
+    display: flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    width:100%;
+    padding-bottom:45px;
+    
+    & h1{
+        padding:50px 0 30px 21px;
+        align-self:flex-start;
+    }
+    & div{
+        position:relative;
+        display:flex;
+        flex-flow:row nowrap;
+        align-items:center;
+        background:$clr-light-bg;
+        width: 88%;
+        border-radius: 20px;
+        margin: 0 0 25px 10px;
+        box-shadow:$shadow-card;
+    }
+    & .icon {
+        height: 20px;
+        color:lighten($clr-font-main,49%);
+        padding: 27px 20px 26px 35px;
+    }
+    & h2{
+        font-size:14px;
+        font-weight:500;
+    }
     & p{
+        position:absolute;
+        left:-10px;
         font-size:12px;
         font-weight:400;
         display: flex;
