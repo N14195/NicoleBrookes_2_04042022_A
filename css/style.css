@@ -10,6 +10,11 @@ h2 {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: black;
@@ -88,6 +93,10 @@ button .button--bg {
   transition: opacity 150ms;
 }
 
+.card a {
+  color: black;
+}
+
 footer {
   width: 100%;
   background: #353535;
@@ -109,6 +118,9 @@ footer ul li {
   list-style: none;
   font-size: 13px;
   padding: 0 0 12px;
+}
+footer ul li a {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
