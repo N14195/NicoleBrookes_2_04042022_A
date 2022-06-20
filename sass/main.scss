@@ -139,17 +139,26 @@ button {
     }
     & .container{
         display:flex;
-        flex-flow:column nowrap;
+        flex-flow:row nowrap;
+        justify-content:space-between;
         background:$clr-white-bg;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
+        & .left{
+            display:flex;
+            flex-flow:column nowrap;
+        }
         & h2{
             font-size:14px;
             padding:0;
-            padding: 20px 14px 10px;
+            padding: 18px 14px 8px;
         }
         & p{
-            padding: 0 14px 20px;
+            padding: 0 14px 18px;
+        }
+        & .heart{
+            height: 21px;
+            padding:24px;
         }
     }
 }
