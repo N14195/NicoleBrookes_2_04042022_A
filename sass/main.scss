@@ -50,22 +50,22 @@ body {
     align-items: center;
   }
 
-  button {
+  .btn {
     position:relative;
     z-index:1;
     &:hover{
-        & .button--bg{
+        & .btn--bg{
             opacity:1;
         }
     }
-    & .button--bg{
+    & .btn--bg{
         position:absolute;
         inset:0;
         opacity:0;
         z-index:-1;
     }
 }
-header {
+.header {
     width:100%;
     height:65px;
     display: flex;
@@ -74,10 +74,13 @@ header {
     align-items:flex-start;
     z-index: 1;
     box-shadow: $shadow-header;
-    & img {
+    &__logo {
         padding: 22px 0 12px;
+        &--title-page{
+            align-self:center;
+        }
     }
-    & .fa-arrow-left{
+    &__back-arrow{
         height:26px;
         width:35px;
         flex-shrink: 0;
@@ -86,8 +89,7 @@ header {
         margin-right:-30px;
     }
 }
-
-#location {
+.location {
     display:flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -95,67 +97,50 @@ header {
     background: $clr-light-bg;
     width:100%;
     color: lighten($clr-font-main, 21%);
-    & h1 {
+    h1 {
         font-weight:500;
         font-size:15px;
         padding:20px;
     }
 }
-#title {
+.title {
     background:$clr-med-bg;
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
     width: 100%;
     padding: 45px 0 55px;
-    & h1 {
+    h1 {
         padding-bottom:25px;
     }
-    & h2 {
+    h2 {
         font-weight:200;
         text-align: center;
         padding:25px 45px 30px;
     }
-    & button{
-        color:$clr-font-white;
-        background:$gradient;
-        border-radius: 30px;
-        padding: 16px 33px;
-        font-size: 14px;
-        border-style: none;
-        box-shadow:$shadow-btn;
-        & .button--bg{
-            background:$gradient-hover;
-            border-radius:30px;
-            box-shadow: $shadow-btn-hover;
-            transition:opacity 150ms;
-        }
+    &__btn{
+    color:$clr-font-white;
+    background:$gradient;
+    border-radius: 30px;
+    padding: 16px 33px;
+    font-size: 14px;
+    border-style: none;
+    box-shadow:$shadow-btn;
+    &--bg{
+        background:$gradient-hover;
+        border-radius:30px;
+        box-shadow: $shadow-btn-hover;
+        transition:opacity 150ms;
     }
 }
-
-#restaurants{
-    display:flex;
-    flex-flow:column nowrap;
-    align-items:center;
-    width:100%;
-    background:$clr-light-bg;
-    & h1{
-        margin: 60px 20px 20px; 
-        align-self: flex-start;
-    }
 }
-#instructions {
+.instructions {
     display: flex;
     flex-flow:column nowrap;
     align-items:center;
     width:100%;
     padding-bottom:45px;
-    
-    & h1{
-        padding:50px 0 30px 21px;
-        align-self:flex-start;
-    }
-    & div{
+    &__container {
         position:relative;
         display:flex;
         flex-flow:row nowrap;
@@ -166,16 +151,20 @@ header {
         margin: 0 0 25px 10px;
         box-shadow:$shadow-card;
     }
-    & .icon {
+    &__icon {
         height: 20px;
         color:lighten($clr-font-main,49%);
         padding: 27px 20px 26px 35px;
     }
-    & h2{
+    h1 {
+        padding:50px 0 30px 21px;
+        align-self:flex-start;
+    }
+    h2 {
         font-size:14px;
         font-weight:500;
     }
-    & p{
+    p {
         position:absolute;
         left:-10px;
         font-size:12px;
@@ -191,12 +180,23 @@ header {
         border-radius:15px;
     }
 }
+.restaurants {
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    width:100%;
+    background:$clr-light-bg;
+    h1 {
+        margin: 60px 20px 20px; 
+        align-self: flex-start;
+    }
+}
 .card {
     width:90%;
     margin:10px 0;
     box-shadow:$shadow-card;
     border-radius:15px;
-    & img{
+    &__img {
         width:100%;
         height:175px;
         border-top-left-radius: 15px;
@@ -204,31 +204,31 @@ header {
         display: block;
         object-fit:cover;
     }
-    & .container{
+    &__container {
         display:flex;
         flex-flow:row nowrap;
         justify-content:space-between;
         background:$clr-white-bg;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        & .card-text{
+        &__text {
             display:flex;
             flex-flow:column nowrap;
         }
-        & h2{
+        h2 {
             font-size:14px;
             padding:0;
             padding: 18px 14px 8px;
         }
-        & p{
+        p {
             padding: 0 14px 18px;
         }
-        & .heart{
+        &__heart{
             height: 21px;
             padding:24px;
             }
         }
-    & button {
+    &__btn {
         position:relative;
         background: white;
         border: 0 none transparent;
@@ -236,11 +236,11 @@ header {
         border-radius: 15px;
         height:70px;
         &:hover{
-            & .button--bg{
+            &--bg{
                 opacity:1;
             }
         }
-        & .button--bg{
+        &--bg{
             position:absolute;
             inset:0;
             opacity:0;
@@ -249,34 +249,33 @@ header {
             background-clip:text;
             -webkit-background-clip: text;
             background-image: $gradient;
-
         }
-}
+    }
     &:hover{
         box-shadow: $shadow-card-hover;
     }
 }
 
-footer {
+.footer {
     width:100%;
     background:$clr-dark-bg;
     color:$clr-font-white;
-    & .icon {
-        padding-right:12px;
-    }
-    & img {
+    &__img {
         filter: invert(1);
         height:18px;
         padding:26px 25px 23px;
     }
-    & ul {
+    &__list {
         padding:0 25px 38px;
         margin:0;
-        & li {
+        &__icon {
+            padding-right:12px;
+        }
+        &__item {
             list-style: none;
             font-size: 13px;
             padding:0 0 12px;
-            & a {
+            a {
                 color:$clr-font-white;
             }
         }
