@@ -19,7 +19,7 @@ h3 {
 h4 {
   margin: 0;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a {
@@ -121,11 +121,11 @@ body {
 .title__btn {
   color: white;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  border-radius: 30px;
-  padding: 16px 33px;
   font-size: 14px;
+  border-radius: 30px;
   border-style: none;
   box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.25);
+  padding: 16px 33px;
 }
 .title__btn--bg {
   background: linear-gradient(to bottom right, #ff93e1, #9b63df);
@@ -275,6 +275,7 @@ body {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   margin-top: -55px;
+  padding-bottom: 80px;
 }
 .menu__heading {
   display: flex;
@@ -295,6 +296,7 @@ body {
   flex-flow: column nowrap;
   align-items: flex-start;
   width: 100%;
+  margin-bottom: 45px;
 }
 .course h2 {
   font-weight: 300;
@@ -308,10 +310,13 @@ body {
   margin: 0 0 0 20px;
 }
 .course__menu-item {
+  display: flex;
+  flex-flow: column wrap;
   background: white;
   border-radius: 15px;
   box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.1);
   width: 92%;
+  height: 70px;
   margin: 14px 0 0 14px;
 }
 .course__menu-item h3 {
@@ -322,10 +327,32 @@ body {
   padding: 0 0 16px 10px;
 }
 .course__menu-item h4 {
-  padding: 0;
-  font-weight: 400;
-  font-size: 12px;
-  color: red;
+  padding: 40px 20px 0;
+  text-align: right;
+}
+.course__menu-item--description {
+  width: 85%;
+}
+.course__menu-item--price {
+  width: 15%;
+  flex-grow: 0;
+}
+.course__btn {
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  font-size: 14px;
+  border-radius: 30px;
+  border-style: none;
+  box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.25);
+  padding: 17px;
+  width: 190px;
+  align-self: center;
+}
+.course__btn--bg {
+  background: linear-gradient(to bottom right, #ff93e1, #9b63df);
+  border-radius: 30px;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.28);
+  transition: opacity 150ms;
 }
 
 /*FOOTER*/
