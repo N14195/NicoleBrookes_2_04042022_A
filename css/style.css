@@ -69,6 +69,16 @@ body {
   margin-right: -30px;
   color: #363636;
 }
+.header--menu-page {
+  box-shadow: none;
+}
+
+.bg--menu-page {
+  background-image: url(/img/bastille.png);
+  background-size: cover;
+  width: 100%;
+  height: 270px;
+}
 
 .location {
   display: flex;
