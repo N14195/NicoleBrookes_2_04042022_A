@@ -69,6 +69,8 @@ body {
         z-index:-1;
     }
 }
+
+/*HEADER*/
 .header {
     width:100%;
     height:65px;
@@ -97,14 +99,7 @@ body {
         box-shadow:none;
     }
 }
-.bg {
-    &--menu-page {
-    background-image:url(/img/bastille.png);
-    background-size:cover;
-    width:100%;
-    height:270px;
-    }
-}
+/*HOMEPAGE ELEMENTS*/
 .location {
     display:flex;
     flex-flow: row nowrap;
@@ -271,7 +266,26 @@ body {
         box-shadow: $shadow-card-hover;
     }
 }
-
+/*MENU PAGE ELEMENTS*/
+.menu-page-bg {
+    background-color: $clr-white-bg;
+    background-size:cover;
+    width:100%;
+    height:270px;
+    &--bastille{
+        background-image:url(/img/bastille.png);
+    }
+    }
+.menu {
+    background:$clr-light-bg;
+    display:flex;
+    flex-flow:column nowrap;
+    width:100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top:-55px;
+}
+/*FOOTER*/
 .footer {
     width:100%;
     background:$clr-dark-bg;
