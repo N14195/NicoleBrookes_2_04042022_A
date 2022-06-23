@@ -36,6 +36,16 @@ h2 {
     margin:0;
     font-size:16px;
 }
+h3 {
+    margin:0;
+    font-size: 15px;
+    font-weight: 500;
+}
+h4 {
+    margin:0;
+    font-size:12px;
+    font-weight:500;
+}
 a {
     text-decoration: none;
     color:$clr-font-main;
@@ -284,6 +294,56 @@ body {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     margin-top:-55px;
+    &__heading{
+        display:flex;
+        flex-flow:row nowrap;
+        align-items:center;
+        justify-content: space-between;
+        padding: 40px 40px 45px 20px;
+    }
+    h1 {
+        font-family: $font-logo;
+    }
+    &__heart{
+        height:22px;
+    }
+}
+.course{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:flex-start;
+    width:100%;
+    h2{
+        font-weight: 300;
+        margin: 0 0 5px 20px;
+        font-size: 15px;    
+    }
+    hr {
+        width:40px;
+        border: 0px none $clr-tertiary;
+        border-top: 3px solid $clr-tertiary;
+        margin:0 0 0 20px;
+    }
+    &__menu-item{
+        background:$clr-white-bg;
+        border-radius:15px;
+        box-shadow: $shadow-card;
+        width:92%;
+        margin: 14px 0 0 14px;
+        h3{
+            padding:16px 0 10px 10px;
+        }
+        p{
+            font-size:10px;
+            padding: 0 0 16px 10px;
+        }
+        h4{
+            padding:0;
+            font-weight:400;
+            font-size:12px;
+            color:red;
+        }
+    }
 }
 /*FOOTER*/
 .footer {
