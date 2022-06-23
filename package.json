@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/N14195/NicoleBrookes_2_04042022_A/issues"
   },
-  "homepage": "https://github.com/N14195/NicoleBrookes_2_04042022_A#readme"
+  "homepage": "https://github.com/N14195/NicoleBrookes_2_04042022_A#readme",
+  "browserslist": "last 4 versions",
+  "dependencies": {
+    "autoprefixer": "^8.0.0",
+    "postcss-cli": "^9.1.0"
+  }
 }
