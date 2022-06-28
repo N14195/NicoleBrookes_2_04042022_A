@@ -1,3 +1,4 @@
+
 /*FONTS*/
 $font-main: "Roboto", sans-serif;
 $font-logo: "Shrikhand", cursive;
@@ -292,6 +293,54 @@ body {
         background-image:url(/img/bastille.png);
     }
     }
+    .favourite{
+        position:relative;
+        background:$clr-light-bg;
+        margin:0px;
+      }
+      @keyframes favourite-btn-square{
+        from {
+          transform:scaleY(1);
+        }
+        to {
+          transform:scaleY(0);
+        }
+      }
+      
+      .fa-heart {
+        font-size:20px;
+        font-weight: 900;
+      }
+      .top-heart {
+        position:relative;
+        z-index:3;
+        background:transparent;
+        &:hover{
+            & + .fa-square{
+            transform:scaleY(0);
+            transform-origin:top;
+            animation:favourite-btn-square 0.2s cubic-bezier(0,.52,.82,.61);
+              }
+        }
+      }
+      .fa-square {
+        position:absolute;
+        z-index:2;
+        inset:-3px 0 0 0;
+        font-size:35px;
+        color:$clr-light-bg;
+        opacity:100%;
+      }
+      .fa-gradient {
+        position:absolute;
+        z-index:1;
+        inset:0;
+          background: -webkit-gradient(linear, left top, left bottom, from($clr-primary), to($clr-secondary));
+          background-clip:text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      
 .menu {
     background:$clr-light-bg;
     display:flex;

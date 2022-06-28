@@ -19,6 +19,7 @@
   "homepage": "https://github.com/N14195/NicoleBrookes_2_04042022_A#readme",
   "browserslist": "last 4 versions",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "autoprefixer": "^8.0.0",
     "postcss-cli": "^9.1.0"
   }

@@ -267,6 +267,55 @@ body {
   background-image: url(/img/bastille.png);
 }
 
+.favourite {
+  position: relative;
+  background: #f6f6f6;
+  margin: 0px;
+}
+
+@keyframes favourite-btn-square {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+.fa-heart {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.top-heart {
+  position: relative;
+  z-index: 3;
+  background: transparent;
+}
+.top-heart:hover + .fa-square {
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: favourite-btn-square 0.2s cubic-bezier(0, 0.52, 0.82, 0.61);
+}
+
+.fa-square {
+  position: absolute;
+  z-index: 2;
+  inset: -3px 0 0 0;
+  font-size: 35px;
+  color: #f6f6f6;
+  opacity: 100%;
+}
+
+.fa-gradient {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .menu {
   background: #f6f6f6;
   display: flex;
