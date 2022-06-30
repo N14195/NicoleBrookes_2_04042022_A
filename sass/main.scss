@@ -8,7 +8,8 @@ $clr-primary:#9356DC;
 $clr-secondary:#FF79DA;
 $clr-tertiary:#99E2D0;
 
-$gradient:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+$gradient-btn:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+$gradient-fav:linear-gradient(to top right, $clr-secondary, $clr-primary);
 $gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
 $clr-font-main:black;
@@ -30,7 +31,7 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
 }
 @mixin gradient-btn{
     color:$clr-font-white;
-    background:$gradient;
+    background:$gradient-btn;
     font-size: 14px;
     border-radius: 30px;
     border-style: none;
@@ -298,10 +299,12 @@ body {
             padding:25px;
         }
         &:hover{
+            opacity:0;
+            transition:opacity 250ms ease-in;
             & + .fa-square{
             transform:scaleY(0);
             transform-origin:top;
-            animation:favourite-btn 0.2s cubic-bezier(0,.52,.82,.61);
+            animation:favourite-btn 220ms cubic-bezier(0,.52,.82,.61);
               }
         }
       }
@@ -321,7 +324,7 @@ body {
         position:absolute;
         z-index:1;
         inset:0;
-          background: $gradient;
+          background: $gradient-fav;
           background-clip:text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

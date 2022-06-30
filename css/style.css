@@ -278,10 +278,14 @@ body {
 .top-heart--home {
   padding: 25px;
 }
+.top-heart:hover {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
 .top-heart:hover + .fa-square {
   transform: scaleY(0);
   transform-origin: top;
-  animation: favourite-btn 0.2s cubic-bezier(0, 0.52, 0.82, 0.61);
+  animation: favourite-btn 220ms cubic-bezier(0, 0.52, 0.82, 0.61);
 }
 
 .fa-square {
@@ -301,7 +305,7 @@ body {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background: linear-gradient(to top right, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
