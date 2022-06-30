@@ -383,6 +383,7 @@ body {
     &__menu-item{
         display:flex;
         flex-flow:column wrap;
+        overflow:hidden;
         background:$clr-white-bg;
         border-radius:15px;
         box-shadow: $shadow-card;
@@ -407,7 +408,13 @@ body {
             width:15%;
             flex-grow:0;
         }
+        &:hover{
+            & >.course__selected{
+            transform:translate(0px);
+            }
+        }
     }
+
     &__selected{
         position:relative;
         display:flex;
@@ -422,6 +429,9 @@ body {
         background:$clr-tertiary;
         color:$clr-font-white;
         font-size:20px;
+        transform-origin:100%;
+        transform:translate(60px);
+        transition:transform 750ms;
     }
     &__btn{
         @include gradient-btn;

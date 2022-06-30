@@ -364,6 +364,7 @@ body {
 .course__menu-item {
   display: flex;
   flex-flow: column wrap;
+  overflow: hidden;
   background: white;
   border-radius: 15px;
   box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.1);
@@ -389,6 +390,9 @@ body {
   width: 15%;
   flex-grow: 0;
 }
+.course__menu-item:hover > .course__selected {
+  transform: translate(0px);
+}
 .course__selected {
   position: relative;
   display: flex;
@@ -403,6 +407,9 @@ body {
   background: #99E2D0;
   color: white;
   font-size: 20px;
+  transform-origin: 100%;
+  transform: translate(60px);
+  transition: transform 750ms;
 }
 .course__btn {
   color: white;
