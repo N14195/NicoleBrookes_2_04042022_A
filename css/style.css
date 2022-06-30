@@ -343,6 +343,14 @@ body {
   font-family: "Shrikhand", cursive;
 }
 
+@keyframes opacity_0-100 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .course {
   display: flex;
   flex-flow: column nowrap;
@@ -354,12 +362,16 @@ body {
   font-weight: 300;
   margin: 0 0 5px 20px;
   font-size: 15px;
+  transform: opacity(0);
+  animation: opacity_0-100 1400ms 800ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course hr {
   width: 40px;
   border: 0px none #99E2D0;
   border-top: 3px solid #99E2D0;
   margin: 0 0 0 20px;
+  transform: opacity(0);
+  animation: opacity_0-100 1400ms 1000ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item {
   display: flex;
@@ -390,6 +402,18 @@ body {
   width: 15%;
   flex-grow: 0;
   transition: transform 750ms;
+}
+.course__menu-item1 {
+  transform: opacity(0);
+  animation: opacity_0-100 1400ms 1500ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
+}
+.course__menu-item2 {
+  transform: opacity(0);
+  animation: opacity_0-100 1400ms 1900ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
+}
+.course__menu-item3 {
+  transform: opacity(0);
+  animation: opacity_0-100 1400ms 2300ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item:hover .course__menu-item--price {
   transform: translate(-60px);
