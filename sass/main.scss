@@ -180,10 +180,19 @@ body {
         flex-flow:row nowrap;
         align-items:center;
         background:$clr-light-bg;
+        z-index:1;
         width: 88%;
         border-radius: 20px;
         margin: 0 0 25px 10px;
         box-shadow:$shadow-card;
+        &--anim-bg{
+            position:absolute;
+            inset:0;
+            background:lighten($clr-primary, 35%);
+            opacity:0;
+            z-index:-1;
+            
+        }
     }
     &__icon {
         height: 20px;
@@ -213,6 +222,7 @@ body {
         color:$clr-font-white;
         border-radius:15px;
     }
+    
 }
 .restaurants {
     display:flex;
