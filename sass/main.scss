@@ -407,10 +407,18 @@ body {
         &--price{
             width:15%;
             flex-grow:0;
+            transition:transform 750ms;
+
         }
         &:hover{
+            .course__menu-item--price{
+                transform:translate(-60px);
+            }
             & >.course__selected{
             transform:translate(0px);
+                & >.fa-circle-check{
+                transform:rotate(360deg);
+                }
             }
         }
     }
@@ -431,6 +439,9 @@ body {
         font-size:20px;
         transform-origin:100%;
         transform:translate(60px);
+        transition:transform 750ms;
+    }
+    .fa-circle-check{
         transition:transform 750ms;
     }
     &__btn{
