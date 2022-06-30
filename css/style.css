@@ -342,9 +342,6 @@ body {
 .menu h1 {
   font-family: "Shrikhand", cursive;
 }
-.menu__heart {
-  height: 22px;
-}
 
 .course {
   display: flex;
@@ -391,6 +388,21 @@ body {
 .course__menu-item--price {
   width: 15%;
   flex-grow: 0;
+}
+.course__selected {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -60px;
+  width: 60px;
+  height: 70px;
+  z-index: 2;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #99E2D0;
+  color: white;
+  font-size: 20px;
 }
 .course__btn {
   color: white;
