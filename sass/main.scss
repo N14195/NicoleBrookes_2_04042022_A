@@ -42,27 +42,14 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         transition:opacity 150ms;
     }
 }
-@mixin heart-btn{
-    position:relative;
-    background: white;
-    border: 0 none transparent;
-    padding: 0;
-    &:hover{
-        &--bg{
-            opacity:1;
-        }
+@keyframes favourite-btn{
+    from {
+      transform:scaleY(1);
     }
-    &--bg{
-        position:absolute;
-        inset:0;
-        opacity:0;
-        z-index:-1;
-        color:transparent; 
-        background-clip:text;
-        -webkit-background-clip: text;
-        background-image: $gradient;
+    to {
+      transform:scaleY(0);
     }
-}
+  }
 
 h1 {
     margin:0;
@@ -242,6 +229,7 @@ body {
     margin:10px 0;
     box-shadow:$shadow-card;
     border-radius:15px;
+    z-index:0;
     &__img {
         width:100%;
         height:175px;
@@ -274,11 +262,7 @@ body {
             padding:24px;
             }
         }
-    &__btn {
-        @include heart-btn;
-        border-radius: 15px;
-        height:70px;
-    }
+    
     &:hover{
         box-shadow: $shadow-card-hover;
     }
@@ -297,16 +281,11 @@ body {
         position:relative;
         background:$clr-light-bg;
         margin:0px;
-      }
-      @keyframes favourite-btn-square{
-        from {
-          transform:scaleY(1);
-        }
-        to {
-          transform:scaleY(0);
+        border-bottom-right-radius: 15px;
+        &--home{
+            background:$clr-white-bg;
         }
       }
-      
       .fa-heart {
         font-size:20px;
         font-weight: 900;
@@ -315,11 +294,14 @@ body {
         position:relative;
         z-index:3;
         background:transparent;
+        &--home {
+            padding:25px;
+        }
         &:hover{
             & + .fa-square{
             transform:scaleY(0);
             transform-origin:top;
-            animation:favourite-btn-square 0.2s cubic-bezier(0,.52,.82,.61);
+            animation:favourite-btn 0.2s cubic-bezier(0,.52,.82,.61);
               }
         }
       }
@@ -330,15 +312,22 @@ body {
         font-size:35px;
         color:$clr-light-bg;
         opacity:100%;
+        &--home {
+            inset:19px;
+            color:$clr-white-bg;
+        }
       }
       .fa-gradient {
         position:absolute;
         z-index:1;
         inset:0;
-          background: -webkit-gradient(linear, left top, left bottom, from($clr-primary), to($clr-secondary));
+          background: $gradient;
           background-clip:text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        &--home{
+            inset:25px;
+          }
       }
       
 .menu {
@@ -350,6 +339,7 @@ body {
     border-top-right-radius: 30px;
     margin-top:-55px;
     padding-bottom:80px;
+
     &__heading{
         display:flex;
         flex-flow:row nowrap;
@@ -398,7 +388,7 @@ body {
             padding: 0 0 16px 10px;
         }
         h4{
-            padding:40px 20px 0;
+            padding:40px 20px 0 0;
             text-align:right;
         }
         &--description{
