@@ -386,14 +386,14 @@ body {
         font-weight: 300;
         margin: 0 0 5px 20px;
         font-size: 15px;
-        @include page-load-animation (800ms); 
+        @include page-load-animation (1200ms); 
     }
     hr {
         width:40px;
         border: 0px none $clr-tertiary;
         border-top: 3px solid $clr-tertiary;
         margin:0 0 0 20px;
-        @include page-load-animation (1000ms);
+        @include page-load-animation (1600ms);
     }
     &__menu-item{
         display:flex;
@@ -426,13 +426,13 @@ body {
 
         }
         &1{
-            @include page-load-animation(1500ms);
+            @include page-load-animation(2000ms);
         }
         &2{
-            @include page-load-animation(1900ms);
+            @include page-load-animation(2400ms);
         }
         &3{
-            @include page-load-animation(2300ms);
+            @include page-load-animation(2800ms);
         }
         &:hover{
             .course__menu-item--price{
