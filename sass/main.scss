@@ -288,60 +288,60 @@ body {
         background-image:url(/img/bastille.png);
     }
     }
-    .favourite{
-        position:relative;
-        background:$clr-light-bg;
-        margin:0px;
-        border-bottom-right-radius: 15px;
-        &--home{
-            background:$clr-white-bg;
+.favourite{
+    position:relative;
+    background:$clr-light-bg;
+    margin:0px;
+    border-bottom-right-radius: 15px;
+    &--home{
+        background:$clr-white-bg;
+    }
+}
+.fa-heart {
+    font-size:20px;
+    font-weight: 900;
+}
+.top-heart {
+    position:relative;
+    z-index:3;
+    background:transparent;
+    &--home {
+        padding:25px;
+    }
+    &:hover{
+        opacity:0;
+        transition:opacity 250ms ease-in;
+        & + .fa-square{
+        transform:scaleY(0);
+        transform-origin:top;
+        animation:favourite-btn 220ms cubic-bezier(0,.52,.82,.61);
         }
-      }
-      .fa-heart {
-        font-size:20px;
-        font-weight: 900;
-      }
-      .top-heart {
-        position:relative;
-        z-index:3;
-        background:transparent;
-        &--home {
-            padding:25px;
-        }
-        &:hover{
-            opacity:0;
-            transition:opacity 250ms ease-in;
-            & + .fa-square{
-            transform:scaleY(0);
-            transform-origin:top;
-            animation:favourite-btn 220ms cubic-bezier(0,.52,.82,.61);
-              }
-        }
-      }
-      .fa-square {
-        position:absolute;
-        z-index:2;
-        inset:-3px 0 0 0;
-        font-size:35px;
-        color:$clr-light-bg;
-        opacity:100%;
-        &--home {
-            inset:19px;
-            color:$clr-white-bg;
-        }
-      }
-      .fa-gradient {
-        position:absolute;
-        z-index:1;
-        inset:0;
-          background: $gradient-fav;
-          background-clip:text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        &--home{
-            inset:25px;
-          }
-      }
+    }
+}
+.fa-square {
+    position:absolute;
+    z-index:2;
+    inset:-3px 0 0 0;
+    font-size:35px;
+    color:$clr-light-bg;
+    opacity:100%;
+    &--home {
+        inset:19px;
+        color:$clr-white-bg;
+    }
+}
+.fa-gradient {
+    position:absolute;
+    z-index:1;
+    inset:0;
+    background: $gradient-fav;
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &--home{
+        inset:25px;
+    }
+}
       
 .menu {
     background:$clr-light-bg;
@@ -352,7 +352,6 @@ body {
     border-top-right-radius: 30px;
     margin-top:-55px;
     padding-bottom:80px;
-
     &__heading{
         display:flex;
         flex-flow:row nowrap;
@@ -362,9 +361,6 @@ body {
     }
     h1 {
         font-family: $font-logo;
-    }
-    &__heart{
-        height:22px;
     }
 }
 .course{
@@ -387,6 +383,7 @@ body {
     &__menu-item{
         display:flex;
         flex-flow:column wrap;
+        overflow:hidden;
         background:$clr-white-bg;
         border-radius:15px;
         box-shadow: $shadow-card;
@@ -410,7 +407,42 @@ body {
         &--price{
             width:15%;
             flex-grow:0;
+            transition:transform 750ms;
+
         }
+        &:hover{
+            .course__menu-item--price{
+                transform:translate(-60px);
+            }
+            & >.course__selected{
+            transform:translate(0px);
+                & >.fa-circle-check{
+                transform:rotate(360deg);
+                }
+            }
+        }
+    }
+
+    &__selected{
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        left:-60px;
+        width:60px;
+        height:70px;
+        z-index:2;
+        border-top-right-radius:15px;
+        border-bottom-right-radius:15px;
+        background:$clr-tertiary;
+        color:$clr-font-white;
+        font-size:20px;
+        transform-origin:100%;
+        transform:translate(60px);
+        transition:transform 750ms;
+    }
+    .fa-circle-check{
+        transition:transform 750ms;
     }
     &__btn{
         @include gradient-btn;
