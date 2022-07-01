@@ -2,29 +2,29 @@
   0% {
     transform: scaleX(1);
   }
-  12.5% {
+  12% {
     transform: scaleX(1);
   }
-  25% {
+  32% {
     transform: scaleX(1);
   }
-  37.5% {
+  43.5% {
     transform: scaleX(0.5);
   }
-  50% {
+  51.5% {
     transform: scaleX(0);
   }
-  62.5% {
-    transform: scaleX(0);
-  }
-  75% {
+  72% {
     transform: scaleX(0);
     opacity: 1;
   }
-  76% {
+  73% {
     transform: scaleX(1);
     opacity: 0;
     animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
   }
   100% {
     transform: scaleX(1);
@@ -36,29 +36,32 @@
   0% {
     transform: scaleX(1);
   }
-  12.5% {
+  15% {
     transform: scaleX(1);
   }
-  25% {
+  27% {
     transform: scaleX(0.75);
   }
-  37.5% {
+  39.5% {
     transform: scaleX(0.5);
   }
-  50% {
+  52% {
     transform: scaleX(0.25);
   }
-  67.5% {
+  64.5% {
     transform: scaleX(0);
   }
-  75% {
+  72% {
     transform: scaleX(0);
     opacity: 1;
   }
-  76% {
+  73% {
     transform: scaleX(1);
     opacity: 0;
     animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
   }
   100% {
     transform: scaleX(1);
@@ -71,29 +74,32 @@
     transform: scaleX(1);
     opacity: 1;
   }
-  12.5% {
+  10.5% {
     transform: scaleX(0.84);
   }
-  25% {
+  20% {
     transform: scaleX(0.68);
   }
-  37.5% {
+  34.5% {
     transform: scaleX(0.52);
   }
-  50% {
+  47% {
     transform: scaleX(0.33);
   }
-  62.5% {
+  59.5% {
     transform: scaleX(0.15);
   }
-  75% {
+  72% {
     transform: scaleX(0);
     opacity: 1;
   }
-  76% {
+  73% {
     transform: scaleX(1);
     opacity: 0;
     animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
   }
   100% {
     transform: scaleX(1);
@@ -101,11 +107,12 @@
     animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
 }
-body {
+.loading-bg {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .loading {
@@ -119,21 +126,6 @@ body {
   font-size: 150px;
   position: relative;
 }
-.rice:hover ~ .square--1 {
-  transform: scaleX(1);
-  animation: square-1 2380ms 1790ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
-  transform-origin: left;
-}
-.rice:hover ~ .square--2 {
-  transform: scaleX(1);
-  animation: square-2 2700ms 1490ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
-  transform-origin: left;
-}
-.rice:hover ~ .square--3 {
-  transform: scaleX(1);
-  animation: square-3 3000ms 1200ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
-  transform-origin: left;
-}
 
 .square {
   height: 20px;
@@ -143,14 +135,23 @@ body {
 .square--1 {
   inset: -140px 0px;
   width: 50px;
+  transform: scaleX(1);
+  animation: square-1 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
 }
 .square--2 {
   inset: -135px 0px;
   width: 105px;
+  transform: scaleX(1);
+  animation: square-2 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
 }
 .square--3 {
   inset: -130px 0px;
   width: 160px;
+  transform: scaleX(1);
+  animation: square-3 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
 }
 
 /*# sourceMappingURL=loading.css.map */
