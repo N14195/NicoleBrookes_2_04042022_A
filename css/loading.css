@@ -2,69 +2,103 @@
   0% {
     transform: scaleX(1);
   }
-  16.6% {
+  12.5% {
     transform: scaleX(1);
   }
-  33.3% {
+  25% {
     transform: scaleX(1);
   }
-  50% {
+  37.5% {
     transform: scaleX(0.5);
   }
-  66.6% {
+  50% {
     transform: scaleX(0);
   }
-  83.3% {
+  62.5% {
     transform: scaleX(0);
+  }
+  75% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  76% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
   100% {
-    transform: scaleX(0);
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
 }
 @keyframes square-2 {
   0% {
     transform: scaleX(1);
   }
-  16.6% {
+  12.5% {
     transform: scaleX(1);
   }
-  33.3% {
+  25% {
     transform: scaleX(0.75);
   }
-  50% {
+  37.5% {
     transform: scaleX(0.5);
   }
-  66.6% {
+  50% {
     transform: scaleX(0.25);
   }
-  83.3% {
+  67.5% {
     transform: scaleX(0);
   }
-  100% {
+  75% {
     transform: scaleX(0);
+    opacity: 1;
+  }
+  76% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
 }
 @keyframes square-3 {
   0% {
     transform: scaleX(1);
+    opacity: 1;
   }
-  16.6% {
+  12.5% {
     transform: scaleX(0.84);
   }
-  33.3% {
+  25% {
     transform: scaleX(0.68);
   }
-  50% {
+  37.5% {
     transform: scaleX(0.52);
   }
-  66.6% {
+  50% {
     transform: scaleX(0.33);
   }
-  83.3% {
+  62.5% {
     transform: scaleX(0.15);
   }
-  100% {
+  75% {
     transform: scaleX(0);
+    opacity: 1;
+  }
+  76% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
 }
 body {
@@ -87,24 +121,24 @@ body {
 }
 .rice:hover ~ .square--1 {
   transform: scaleX(1);
-  animation: square-1 4s 1585ms cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-1 2380ms 1790ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 .rice:hover ~ .square--2 {
   transform: scaleX(1);
-  animation: square-2 4s 1490ms cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-2 2700ms 1490ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 .rice:hover ~ .square--3 {
   transform: scaleX(1);
-  animation: square-3 4s 1200ms cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-3 3000ms 1200ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 
 .square {
   height: 20px;
   position: relative;
-  background: rgb(215, 244, 253);
+  background: white;
 }
 .square--1 {
   inset: -140px 0px;

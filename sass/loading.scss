@@ -2,74 +2,108 @@
   0%{
     transform:scaleX(1);
   }
-  16.6%{
+  12.5%{
     transform:scaleX(1)
   }
-  33.3%{
+  25%{
     transform:scaleX(1)
   }
-  50%{
+  37.5%{
     transform:scaleX(0.5)
   }
-  66.6%{
+  50%{
     transform:scaleX(0)
   }
-  83.3%{
+  62.5%{
     transform:scaleX(0)
+  }
+  75%{
+    transform:scaleX(0);
+    opacity:1;
+  }
+  76%{
+    transform:scaleX(1);
+    opacity:0;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
   }
   100%{
-    transform:scaleX(0);
+    transform:scaleX(1);
+    opacity:1;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
   }
 }
 @keyframes square-2{
   0%{
     transform:scaleX(1);
   }
-  16.6%{
+  12.5%{
     transform:scaleX(1)
   }
-  33.3%{
+  25%{
     transform:scaleX(0.75)
   }
-  50%{
+  37.5%{
     transform:scaleX(0.5)
   }
-  66.6%{
+  50%{
     transform:scaleX(0.25)
   }
-  83.3%{
+  67.5%{
     transform:scaleX(0)
   }
-  100%{
+  75%{
     transform:scaleX(0);
+    opacity:1;
+  }
+  76%{
+    transform:scaleX(1);
+    opacity:0;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+  }
+  100%{
+    transform:scaleX(1);
+    opacity:1;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
   }
 }
 @keyframes square-3{
   0%{
     transform:scaleX(1);
+    opacity:1;
   }
-  16.6%{
+  12.5%{
     transform:scaleX(0.84)
   }
-  33.3%{
+  25%{
     transform:scaleX(0.68)
   }
-  50%{
+  37.5%{
     transform:scaleX(0.52)
   }
-  66.6%{
+  50%{
     transform:scaleX(0.33)
   }
-  83.3%{
+  62.5%{
     transform:scaleX(0.15)
   }
-  100%{
+  75%{
     transform:scaleX(0);
+    opacity:1;
+  }
+  76%{
+    transform:scaleX(1);
+    opacity:0;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+  }
+  100%{
+    transform:scaleX(1);
+    opacity:1;
+    animation-timing-function:cubic-bezier(.65,.15,.86,.33);
   }
 }
-@mixin loading ($keyframes, $delay){
+@mixin loading ($keyframes,$duration, $delay){
   transform:scaleX(1);
-        animation:$keyframes 4s $delay cubic-bezier(0,1.19,0,.95);
+        animation:$keyframes $duration $delay backwards infinite cubic-bezier(0,1.19,0,.95);
         transform-origin:left;
 }
 body {
@@ -89,20 +123,20 @@ body {
     position:relative;
     &:hover{
       & ~ .square--1{
-        @include loading (square-1, 1585ms);
+        @include loading (square-1, 2380ms, 1790ms);
       }
       & ~ .square--2{
-        @include loading (square-2, 1490ms);
+        @include loading (square-2, 2700ms, 1490ms);
       }
       & ~ .square--3{
-        @include loading (square-3, 1200ms);
+        @include loading (square-3, 3000ms, 1200ms);
       }
     }
   }
   .square{
     height:20px;
     position: relative;
-    background:rgb(215, 244, 253);
+    background:white;
     &--1{
       inset: -140px 0px;
       width:50px;
