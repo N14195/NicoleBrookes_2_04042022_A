@@ -226,7 +226,7 @@
   justify-content: center;
   background-color: white;
   opacity: 1;
-  animation: loading-screen 3s both;
+  animation: loading-screen 0s both;
 }
 
 .loading {
@@ -509,11 +509,27 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-flow: column nowrap;
   width: 90%;
   margin: 10px 0;
   box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   z-index: 0;
+}
+.card__new {
+  display: flex;
+  z-index: 3;
+  position: relative;
+  inset: -160px -15px;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  background: #99E2D0;
+  color: #1b6150;
+  height: 30px;
+  width: 80px;
+  margin-bottom: -30px;
 }
 .card__img {
   width: 100%;
@@ -559,7 +575,7 @@ body {
   height: 270px;
 }
 .menu-page-bg--bastille {
-  background-image: url(/img/bastille.png);
+  background-image: url(/img/bastille.jpg);
 }
 
 .favourite {

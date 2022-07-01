@@ -299,7 +299,7 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
       justify-content:center;
       background-color: white;
       opacity:1;
-      animation:loading-screen 3s both;
+      animation:loading-screen 0s both;
   }
 .loading{
     padding-top: 150px;
@@ -538,11 +538,27 @@ body {
     }
 }
 .card {
+  display:flex;
+  flex-flow:column nowrap;
     width:90%;
     margin:10px 0;
     box-shadow:$shadow-card;
     border-radius:15px;
     z-index:0;
+    &__new {
+    display: flex;
+    z-index: 3;
+    position: relative;
+    inset: -160px -15px;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    background: $clr-tertiary;
+    color: darken($clr-tertiary, 50%);
+    height: 30px;
+    width: 80px;
+    margin-bottom: -30px;
+    }
     &__img {
         width:100%;
         height:175px;
@@ -588,7 +604,7 @@ body {
     width:100%;
     height:270px;
     &--bastille{
-        background-image:url(/img/bastille.png);
+        background-image:url(/img/bastille.jpg);
     }
     }
 .favourite{
