@@ -1,6 +1,31 @@
 /*FONTS*/
 /*COLOURS*/
-@keyframes opacity_homepage_1 {
+/*GRADIENTS*/
+/*FONT COLOURS*/
+/*BACKGROUND COLOURS*/
+/*BOX-SHADOWS*/
+/*MIXINS FOR OPACITY TRANSITIONS*/
+/*ANIMATION MIXINS*/
+/*GRADIENT BUTTON*/
+/*FAVOURITE ICONS*/
+@keyframes favourite-btn {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+@keyframes opacity_0-100 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*INSTRUCTIONS-PURPLE BLOCKS*/
+@keyframes instructions_opacity_1 {
   0% {
     opacity: 0;
   }
@@ -20,7 +45,7 @@
     opacity: 0;
   }
 }
-@keyframes opacity_homepage_2 {
+@keyframes instructions_opacity_2 {
   0% {
     opacity: 0;
   }
@@ -43,7 +68,7 @@
     opacity: 0;
   }
 }
-@keyframes opacity_homepage_3 {
+@keyframes instructions_opacity_3 {
   0% {
     opacity: 0;
   }
@@ -63,22 +88,182 @@
     opacity: 0;
   }
 }
-@keyframes favourite-btn {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
-@keyframes opacity_0-100 {
+/*LOADING PAGE*/
+@keyframes loading-screen {
   0% {
-    opacity: 0;
-  }
-  100% {
     opacity: 1;
   }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
+/*LOADING PAGE- RICE GRAINS*/
+@keyframes square-1 {
+  0% {
+    transform: scaleX(1);
+  }
+  12% {
+    transform: scaleX(1);
+  }
+  32% {
+    transform: scaleX(1);
+  }
+  43.5% {
+    transform: scaleX(0.5);
+  }
+  51.5% {
+    transform: scaleX(0);
+  }
+  72% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  73% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+}
+@keyframes square-2 {
+  0% {
+    transform: scaleX(1);
+  }
+  15% {
+    transform: scaleX(1);
+  }
+  27% {
+    transform: scaleX(0.75);
+  }
+  39.5% {
+    transform: scaleX(0.5);
+  }
+  52% {
+    transform: scaleX(0.25);
+  }
+  64.5% {
+    transform: scaleX(0);
+  }
+  72% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  73% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+}
+@keyframes square-3 {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  10.5% {
+    transform: scaleX(0.84);
+  }
+  20% {
+    transform: scaleX(0.68);
+  }
+  34.5% {
+    transform: scaleX(0.52);
+  }
+  47% {
+    transform: scaleX(0.33);
+  }
+  59.5% {
+    transform: scaleX(0.15);
+  }
+  72% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  73% {
+    transform: scaleX(1);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
+  }
+}
+.loading-screen {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: 1;
+  animation: loading-screen 3s both;
+}
+
+.loading {
+  padding-top: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.rice {
+  font-size: 150px;
+  position: relative;
+}
+
+.square {
+  height: 20px;
+  position: relative;
+  background: white;
+}
+.square--1 {
+  inset: -140px 0px;
+  width: 50px;
+  transform: scaleX(1);
+  animation: square-1 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
+}
+.square--2 {
+  inset: -135px 0px;
+  width: 105px;
+  transform: scaleX(1);
+  animation: square-2 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
+}
+.square--3 {
+  inset: -130px 0px;
+  width: 160px;
+  transform: scaleX(1);
+  animation: square-3 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  transform-origin: left;
+}
+
+/*TEXT*/
 h1 {
   margin: 0;
   font-size: 20px;
@@ -112,15 +297,7 @@ p {
   font-weight: 300;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: black;
-  margin: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
+/*BUTTONS*/
 .btn {
   position: relative;
   z-index: 1;
@@ -133,6 +310,15 @@ body {
   inset: 0;
   opacity: 0;
   z-index: -1;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 /*HEADER*/
@@ -241,15 +427,15 @@ body {
 }
 .instructions__container--anim-bg1 {
   transform: opacity(0);
-  animation: opacity_homepage_1 6000ms both infinite linear;
+  animation: instructions_opacity_1 6000ms both infinite linear;
 }
 .instructions__container--anim-bg2 {
   transform: opacity(0);
-  animation: opacity_homepage_2 6000ms both infinite linear;
+  animation: instructions_opacity_2 6000ms both infinite linear;
 }
 .instructions__container--anim-bg3 {
   transform: opacity(0);
-  animation: opacity_homepage_3 6000ms both infinite linear;
+  animation: instructions_opacity_3 6000ms both infinite linear;
 }
 .instructions__icons {
   position: relative;
@@ -270,15 +456,15 @@ body {
 }
 .instructions__icon--anim1 {
   transform: opacity(0);
-  animation: opacity_homepage_1 6000ms both infinite linear;
+  animation: instructions_opacity_1 6000ms both infinite linear;
 }
 .instructions__icon--anim2 {
   transform: opacity(0);
-  animation: opacity_homepage_2 6000ms both infinite linear;
+  animation: instructions_opacity_2 6000ms both infinite linear;
 }
 .instructions__icon--anim3 {
   transform: opacity(0);
-  animation: opacity_homepage_3 6000ms both infinite linear;
+  animation: instructions_opacity_3 6000ms both infinite linear;
 }
 .instructions h1 {
   padding: 50px 0 30px 21px;

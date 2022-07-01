@@ -1,4 +1,3 @@
-
 /*FONTS*/
 $font-main: "Roboto", sans-serif;
 $font-logo: "Shrikhand", cursive;
@@ -8,27 +7,32 @@ $clr-primary:#9356DC;
 $clr-secondary:#FF79DA;
 $clr-tertiary:#99E2D0;
 
+/*GRADIENTS*/
 $gradient-btn:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
 $gradient-fav:linear-gradient(to top right, $clr-secondary, $clr-primary);
 $gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
+/*FONT COLOURS*/
 $clr-font-main:black;
 $clr-font-dark:lighten($clr-font-main,20%);
 $clr-font-med:lighten($clr-font-main,50%);
 $clr-font-light:lighten($clr-font-main,80%);
 $clr-font-white:white;
 
+/*BACKGROUND COLOURS*/
 $clr-dark-bg:#353535;
 $clr-med-bg:#eaeaea;
 $clr-light-bg:#f6f6f6;
 $clr-white-bg:white;
 
+/*BOX-SHADOWS*/
 $shadow-header:0 2px 4px 0 rgb(0 0 0 / 20%);
 $shadow-btn:1px 4px 8px 0 rgb(0 0 0 / 25%);
 $shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
 $shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
 $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
 
+/*MIXINS FOR OPACITY TRANSITIONS*/
 @mixin under-layer{
     position:relative;
     z-index:1;
@@ -39,6 +43,23 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         opacity:0;
         z-index:-1;
 }
+
+/*ANIMATION MIXINS*/
+@mixin menu-page-load-animation ($delay){
+    transform:opacity(0);
+    animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
+}
+@mixin instructions-animation ($keyframes) {
+    transform:opacity(0);
+    animation: $keyframes 6000ms both infinite linear; 
+}
+@mixin loading-rice-animation ($keyframes){
+    transform:scaleX(1);
+          animation:$keyframes 1500ms 500ms backwards infinite cubic-bezier(0,1.19,0,.95);
+          transform-origin:left;
+  }
+
+/*GRADIENT BUTTON*/
 @mixin gradient-btn{
     color:$clr-font-white;
     background:$gradient-btn;
@@ -53,15 +74,27 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         transition:opacity 150ms;
     }
 }
-@mixin page-load-animation ($delay){
-    transform:opacity(0);
-    animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
+
+/*FAVOURITE ICONS*/
+@keyframes favourite-btn{
+    from {
+      transform:scaleY(1);
+    }
+    to {
+      transform:scaleY(0);
+    }
+  }
+@keyframes opacity_0-100{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
 }
-@mixin instructions-animation ($keyframes) {
-    transform:opacity(0);
-    animation: $keyframes 6000ms both infinite linear; 
-}
-@keyframes opacity_homepage_1{
+
+/*INSTRUCTIONS-PURPLE BLOCKS*/
+@keyframes instructions_opacity_1{
     0%{
         opacity:0;
     }
@@ -81,7 +114,7 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         opacity:0;
   }
 }
-@keyframes opacity_homepage_2{
+@keyframes instructions_opacity_2{
     0%{
         opacity:0;
     }
@@ -104,7 +137,7 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         opacity:0;
   }
 }
-@keyframes opacity_homepage_3{
+@keyframes instructions_opacity_3{
    0%{
         opacity:0;
     }
@@ -124,23 +157,178 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         opacity:0;
   }
 }
-@keyframes favourite-btn{
-    from {
-      transform:scaleY(1);
-    }
-    to {
-      transform:scaleY(0);
-    }
-  }
-@keyframes opacity_0-100{
+
+/*LOADING PAGE*/
+@keyframes loading-screen{
     0%{
-        opacity:0;
+      opacity:1;
+  }
+  94%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
+  }
+
+/*LOADING PAGE- RICE GRAINS*/
+@keyframes square-1{
+    0%{
+      transform:scaleX(1);
+    }
+    12%{
+      transform:scaleX(1)
+    }
+    32%{
+      transform:scaleX(1)
+    }
+    43.5%{
+      transform:scaleX(0.5)
+    }
+    51.5%{
+      transform:scaleX(0)
+    }
+    72%{
+      transform:scaleX(0);
+      opacity:1;
+    }
+    73%{
+      transform:scaleX(1);
+      opacity:0;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+    }
+    88%{
+      opacity:1;
     }
     100%{
-        opacity:1;
+      transform:scaleX(1);
+      opacity:1;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
     }
+  }
+@keyframes square-2{
+    0%{
+      transform:scaleX(1);
+    }
+    15%{
+      transform:scaleX(1)
+    }
+    27%{
+      transform:scaleX(0.75)
+    }
+    39.5%{
+      transform:scaleX(0.5)
+    }
+    52%{
+      transform:scaleX(0.25)
+    }
+    64.5%{
+      transform:scaleX(0)
+    }
+    72%{
+      transform:scaleX(0);
+      opacity:1;
+    }
+    73%{
+      transform:scaleX(1);
+      opacity:0;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+    }
+    88%{
+      opacity:1;
+    }
+    100%{
+      transform:scaleX(1);
+      opacity:1;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+    }
+  }
+@keyframes square-3{
+    0%{
+      transform:scaleX(1);
+      opacity:1;
+    }
+    
+    10.5%{
+      transform:scaleX(0.84)
+    }
+    20%{
+      transform:scaleX(0.68)
+    }
+    34.5%{
+      transform:scaleX(0.52)
+    }
+    47%{
+      transform:scaleX(0.33)
+    }
+    59.5%{
+      transform:scaleX(0.15)
+    }
+    72%{
+      transform:scaleX(0);
+      opacity:1;
+    }
+    73%{
+      transform:scaleX(1);
+      opacity:0;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+    }
+    88%{
+      opacity:1;
+    }
+    100%{
+      transform:scaleX(1);
+      opacity:1;
+      animation-timing-function:cubic-bezier(.65,.15,.86,.33);
+    }
+  }
+
+.loading-screen {
+    position:absolute;
+    z-index:10;
+    width:100%;
+    height:100%;
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content:center;
+      align-items: center;
+      background-color: white;
+      opacity:1;
+      animation:loading-screen 3s both;
+  }
+.loading{
+    padding-top: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+.rice{
+      font-size:150px;
+      position:relative;
+    }
+.square{
+      height:20px;
+      position: relative;
+      background:white;
+    &--1{
+        inset: -140px 0px;
+        width:50px;
+        @include loading-rice-animation (square-1);
+        }
+    &--2{
+        inset: -135px 0px;
+        width:105px;
+        @include loading-rice-animation (square-2);
+      }
+    &--3{
+        inset: -130px 0px;
+        width:160px;
+        @include loading-rice-animation (square-3);
+      }
+      
 }
 
+/*TEXT*/
 h1 {
     margin:0;
     font-size:20px;
@@ -168,15 +356,7 @@ p {
     margin:0;
     font-weight:300;
 }
-body {
-    font-family: $font-main;
-    color: $clr-font-main;
-    margin:0;
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-  }
-
+/*BUTTONS*/
 .btn {
     @include under-layer;
     &:hover{
@@ -188,7 +368,14 @@ body {
         @include top-layer;
     }
 }
-
+body {
+    font-family: $font-main;
+    color: $clr-font-main;
+    margin:0;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
 /*HEADER*/
 .header {
     width:100%;
@@ -277,13 +464,13 @@ body {
         border-radius:15px;
         z-index:-1;
         &1{
-          @include instructions-animation (opacity_homepage_1,);
+          @include instructions-animation (instructions_opacity_1,);
         }
         &2{
-          @include instructions-animation (opacity_homepage_2);
+          @include instructions-animation (instructions_opacity_2);
         }
         &3{
-          @include instructions-animation (opacity_homepage_3);
+          @include instructions-animation (instructions_opacity_3);
         }
       }
     }
@@ -299,13 +486,13 @@ body {
         @include top-layer;
         z-index:2;
         &1{
-          @include instructions-animation (opacity_homepage_1);
+          @include instructions-animation (instructions_opacity_1);
         }
         &2{
-          @include instructions-animation (opacity_homepage_2);
+          @include instructions-animation (instructions_opacity_2);
         }
         &3{
-          @include instructions-animation (opacity_homepage_3);
+          @include instructions-animation (instructions_opacity_3);
         }
       }
     }
@@ -484,14 +671,14 @@ body {
         font-weight: 300;
         margin: 0 0 5px 20px;
         font-size: 15px;
-        @include page-load-animation (1200ms); 
+        @include menu-page-load-animation (1200ms); 
     }
     hr {
         width:40px;
         border: 0px none $clr-tertiary;
         border-top: 3px solid $clr-tertiary;
         margin:0 0 0 20px;
-        @include page-load-animation (1600ms);
+        @include menu-page-load-animation (1600ms);
     }
     &__menu-item{
         display:flex;
@@ -524,13 +711,13 @@ body {
 
         }
         &1{
-            @include page-load-animation(2000ms);
+            @include menu-page-load-animation(2000ms);
         }
         &2{
-            @include page-load-animation(2400ms);
+            @include menu-page-load-animation(2400ms);
         }
         &3{
-            @include page-load-animation(2800ms);
+            @include menu-page-load-animation(2800ms);
         }
         &:hover{
             .course__menu-item--price{
