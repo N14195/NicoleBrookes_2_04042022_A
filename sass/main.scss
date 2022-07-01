@@ -13,6 +13,9 @@ $gradient-fav:linear-gradient(to top right, $clr-secondary, $clr-primary);
 $gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
 $clr-font-main:black;
+$clr-font-dark:lighten($clr-font-main,20%);
+$clr-font-med:lighten($clr-font-main,50%);
+$clr-font-light:lighten($clr-font-main,80%);
 $clr-font-white:white;
 
 $clr-dark-bg:#353535;
@@ -127,7 +130,7 @@ body {
         flex-grow:0;
         padding-left:20px;
         margin-right:-30px;
-        @include lighter-font;
+        color:$clr-font-dark;
     }
     &--menu-page{
         box-shadow:none;
@@ -196,7 +199,7 @@ body {
     }
     &__icon {
         height: 20px;
-        color:lighten($clr-font-main,49%);
+        color:$clr-font-med;
         padding: 27px 20px 26px 35px;
     }
     h1 {
@@ -229,6 +232,7 @@ body {
     flex-flow:column nowrap;
     align-items:center;
     width:100%;
+    padding-bottom: 65px;
     background:$clr-light-bg;
     h1 {
         margin: 60px 20px 20px; 
@@ -278,6 +282,7 @@ body {
         box-shadow: $shadow-card-hover;
     }
 }
+
 /*MENU PAGE ELEMENTS*/
 .menu-page-bg {
     background-color: $clr-white-bg;
@@ -363,6 +368,18 @@ body {
         font-family: $font-logo;
     }
 }
+@keyframes opacity_0-100{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+@mixin page-load-animation ($delay){
+    transform:opacity(0);
+    animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
+}
 .course{
     display:flex;
     flex-flow:column nowrap;
@@ -372,13 +389,15 @@ body {
     h2{
         font-weight: 300;
         margin: 0 0 5px 20px;
-        font-size: 15px;    
+        font-size: 15px;
+        @include page-load-animation (1200ms); 
     }
     hr {
         width:40px;
         border: 0px none $clr-tertiary;
         border-top: 3px solid $clr-tertiary;
         margin:0 0 0 20px;
+        @include page-load-animation (1600ms);
     }
     &__menu-item{
         display:flex;
@@ -409,6 +428,15 @@ body {
             flex-grow:0;
             transition:transform 750ms;
 
+        }
+        &1{
+            @include page-load-animation(2000ms);
+        }
+        &2{
+            @include page-load-animation(2400ms);
+        }
+        &3{
+            @include page-load-animation(2800ms);
         }
         &:hover{
             .course__menu-item--price{
@@ -473,6 +501,9 @@ body {
             padding:0 0 12px;
             a {
                 color:$clr-font-white;
+                &:hover{
+                    color:$clr-font-light;
+                }
             }
         }
     }
