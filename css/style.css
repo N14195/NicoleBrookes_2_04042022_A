@@ -251,10 +251,34 @@ body {
   transform: opacity(0);
   animation: opacity_homepage_3 6000ms both infinite linear;
 }
+.instructions__icons {
+  position: relative;
+  z-index: 1;
+}
 .instructions__icon {
   height: 20px;
   color: gray;
   padding: 27px 20px 26px 35px;
+}
+.instructions__icon--anim {
+  color: #9356DC;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+  z-index: 2;
+}
+.instructions__icon--anim1 {
+  transform: opacity(0);
+  animation: opacity_homepage_1 6000ms both infinite linear;
+}
+.instructions__icon--anim2 {
+  transform: opacity(0);
+  animation: opacity_homepage_2 6000ms both infinite linear;
+}
+.instructions__icon--anim3 {
+  transform: opacity(0);
+  animation: opacity_homepage_3 6000ms both infinite linear;
 }
 .instructions h1 {
   padding: 50px 0 30px 21px;
