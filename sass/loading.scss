@@ -1,0 +1,119 @@
+@keyframes square-1{
+  0%{
+    transform:scaleX(1);
+  }
+  16.6%{
+    transform:scaleX(1)
+  }
+  33.3%{
+    transform:scaleX(1)
+  }
+  50%{
+    transform:scaleX(0.5)
+  }
+  66.6%{
+    transform:scaleX(0)
+  }
+  83.3%{
+    transform:scaleX(0)
+  }
+  100%{
+    transform:scaleX(0);
+  }
+}
+@keyframes square-2{
+  0%{
+    transform:scaleX(1);
+  }
+  16.6%{
+    transform:scaleX(1)
+  }
+  33.3%{
+    transform:scaleX(0.75)
+  }
+  50%{
+    transform:scaleX(0.5)
+  }
+  66.6%{
+    transform:scaleX(0.25)
+  }
+  83.3%{
+    transform:scaleX(0)
+  }
+  100%{
+    transform:scaleX(0);
+  }
+}
+@keyframes square-3{
+  0%{
+    transform:scaleX(1);
+  }
+  16.6%{
+    transform:scaleX(0.84)
+  }
+  33.3%{
+    transform:scaleX(0.68)
+  }
+  50%{
+    transform:scaleX(0.52)
+  }
+  66.6%{
+    transform:scaleX(0.33)
+  }
+  83.3%{
+    transform:scaleX(0.15)
+  }
+  100%{
+    transform:scaleX(0);
+  }
+}
+@mixin loading ($keyframes, $delay){
+  transform:scaleX(1);
+        animation:$keyframes 4s $delay cubic-bezier(0,1.19,0,.95);
+        transform-origin:left;
+}
+body {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:center;
+    align-items: center;
+}
+.loading{
+  padding-top: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.rice{
+    font-size:150px;
+    position:relative;
+    &:hover{
+      & ~ .square--1{
+        @include loading (square-1, 1585ms);
+      }
+      & ~ .square--2{
+        @include loading (square-2, 1490ms);
+      }
+      & ~ .square--3{
+        @include loading (square-3, 1200ms);
+      }
+    }
+  }
+  .square{
+    height:20px;
+    position: relative;
+    background:rgb(215, 244, 253);
+    &--1{
+      inset: -140px 0px;
+      width:50px;
+      }
+    &--2{
+      inset: -135px 0px;
+      width:105px;
+    }
+    &--3{
+      inset: -130px 0px;
+      width:160px;
+    }
+    
+}
