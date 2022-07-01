@@ -107,12 +107,25 @@
     animation-timing-function: cubic-bezier(0.65, 0.15, 0.86, 0.33);
   }
 }
+@keyframes loading-screen {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .loading-bg {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   background-color: white;
+  opacity: 1;
+  animation: loading-screen 3s both;
 }
 
 .loading {
@@ -136,21 +149,21 @@
   inset: -140px 0px;
   width: 50px;
   transform: scaleX(1);
-  animation: square-1 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-1 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 .square--2 {
   inset: -135px 0px;
   width: 105px;
   transform: scaleX(1);
-  animation: square-2 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-2 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 .square--3 {
   inset: -130px 0px;
   width: 160px;
   transform: scaleX(1);
-  animation: square-3 3000ms 800ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
+  animation: square-3 1500ms 500ms backwards infinite cubic-bezier(0, 1.19, 0, 0.95);
   transform-origin: left;
 }
 
