@@ -29,9 +29,6 @@ $shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
 $shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
 $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
 
-@mixin lighter-font {
-    color:lighten($clr-font-main,21%);
-}
 @mixin gradient-btn{
     color:$clr-font-white;
     background:$gradient-btn;
@@ -46,6 +43,77 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
         transition:opacity 150ms;
     }
 }
+@mixin page-load-animation ($delay){
+    transform:opacity(0);
+    animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
+}
+@mixin instructions-animation ($keyframes) {
+    transform:opacity(0);
+    animation: $keyframes 6000ms both infinite linear; 
+}
+@keyframes opacity_homepage_1{
+    0%{
+        opacity:0;
+    }
+    12.5%{
+        opacity:0.75;
+    }
+  25%{
+    opacity:1;
+  }
+    37.5%{
+      opacity:0.4;
+    }
+    62.5%{
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+  }
+}
+@keyframes opacity_homepage_2{
+    0%{
+        opacity:0;
+    }
+    12.5%{
+        opacity:0;
+    }
+    37.5%{
+      opacity:0.75;
+    }
+  50%{
+    opacity:1;
+  }
+    62.5%{
+        opacity:0.4;
+    }
+    87.5%{
+        opacity:0;
+  }
+    100%{
+        opacity:0;
+  }
+}
+@keyframes opacity_homepage_3{
+   0%{
+        opacity:0;
+    }
+    37.5%{
+      opacity:0;
+    }
+    62.5%{
+        opacity:0.75;
+    }
+  75%{
+    opacity:1;
+  }
+    87.5%{
+        opacity:0.4;
+  }
+    100%{
+        opacity:0;
+  }
+}
 @keyframes favourite-btn{
     from {
       transform:scaleY(1);
@@ -54,6 +122,14 @@ $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
       transform:scaleY(0);
     }
   }
+@keyframes opacity_0-100{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
 
 h1 {
     margin:0;
@@ -144,7 +220,7 @@ body {
     align-items: center;
     background: $clr-light-bg;
     width:100%;
-    @include lighter-font;
+    color:$clr-font-dark;
     h1 {
         font-weight:500;
         font-size:15px;
@@ -188,13 +264,21 @@ body {
         border-radius: 20px;
         margin: 0 0 25px 10px;
         box-shadow:$shadow-card;
-        &--anim-bg{
-            position:absolute;
-            inset:0;
-            background:lighten($clr-primary, 35%);
-            opacity:0;
+        &--anim-bg {
+            position: absolute;
+            inset: 0;
+            background: lighten($clr-primary, 32%); 
+            border-radius:15px;
             z-index:-1;
-            
+            &1{
+              @include instructions-animation (opacity_homepage_1);
+            }
+            &2{
+              @include instructions-animation (opacity_homepage_2);
+            }
+            &3{
+              @include instructions-animation (opacity_homepage_3);
+            }
         }
     }
     &__icon {
@@ -225,7 +309,6 @@ body {
         color:$clr-font-white;
         border-radius:15px;
     }
-    
 }
 .restaurants {
     display:flex;
@@ -367,18 +450,6 @@ body {
     h1 {
         font-family: $font-logo;
     }
-}
-@keyframes opacity_0-100{
-    0%{
-        opacity:0;
-    }
-    100%{
-        opacity:1;
-    }
-}
-@mixin page-load-animation ($delay){
-    transform:opacity(0);
-    animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
 }
 .course{
     display:flex;

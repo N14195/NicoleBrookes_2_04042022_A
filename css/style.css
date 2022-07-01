@@ -1,11 +1,82 @@
 /*FONTS*/
 /*COLOURS*/
+@keyframes opacity_homepage_1 {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0.75;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0.4;
+  }
+  62.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity_homepage_2 {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0;
+  }
+  37.5% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+  62.5% {
+    opacity: 0.4;
+  }
+  87.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity_homepage_3 {
+  0% {
+    opacity: 0;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  62.5% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 1;
+  }
+  87.5% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes favourite-btn {
   from {
     transform: scaleY(1);
   }
   to {
     transform: scaleY(0);
+  }
+}
+@keyframes opacity_0-100 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 h1 {
@@ -102,7 +173,7 @@ body {
   align-items: center;
   background: #f6f6f6;
   width: 100%;
-  color: #363636;
+  color: #333333;
 }
 .location h1 {
   font-weight: 500;
@@ -164,9 +235,21 @@ body {
 .instructions__container--anim-bg {
   position: absolute;
   inset: 0;
-  background: #f2eafb;
-  opacity: 0;
+  background: #e9ddf8;
+  border-radius: 15px;
   z-index: -1;
+}
+.instructions__container--anim-bg1 {
+  transform: opacity(0);
+  animation: opacity_homepage_1 6000ms both infinite linear;
+}
+.instructions__container--anim-bg2 {
+  transform: opacity(0);
+  animation: opacity_homepage_2 6000ms both infinite linear;
+}
+.instructions__container--anim-bg3 {
+  transform: opacity(0);
+  animation: opacity_homepage_3 6000ms both infinite linear;
 }
 .instructions__icon {
   height: 20px;
@@ -344,14 +427,6 @@ body {
   font-family: "Shrikhand", cursive;
 }
 
-@keyframes opacity_0-100 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .course {
   display: flex;
   flex-flow: column nowrap;
