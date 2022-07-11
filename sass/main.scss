@@ -31,6 +31,7 @@ $shadow-btn:1px 4px 8px 0 rgb(0 0 0 / 25%);
 $shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
 $shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
 $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
+$shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
 
 /*MIXINS FOR OPACITY TRANSITIONS*/
 @mixin under-layer{
@@ -559,13 +560,16 @@ body {
     height: 30px;
     width: 80px;
     margin-bottom: -30px;
+    box-shadow: $shadow-new;
     }
     &__img {
         width:100%;
+        position:relative;
         height:175px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         display: block;
+        top:-10px;
         object-fit:cover;
     }
     &__container {
@@ -810,4 +814,75 @@ body {
             }
         }
     }
+}
+/*MEDIA QUERIES*/
+@media screen and (min-width:768px){
+  h1 {
+    font-size: 21px;
+  }
+  .title {
+    h1 {
+      padding-bottom:20px;
+    }
+    h2 {
+    font-size: 17px;
+    padding: 20px 45px 35px;
+    }
+    &__btn{
+      font-size:15px;
+    }
+  }
+  .restaurants {
+    flex-flow:row wrap; 
+    justify-content: space-evenly;
+    h1{
+      margin: 50px 50px 30px;
+      align-self: flex-start;
+      width: 100%;
+    }
+}
+.instructions {
+  h1 {
+    align-self: center;
+    padding: 50px 0 30px;
+  }
+  h2 {
+    font-size:16px;
+  }
+  &__container{
+    width:60%;
+  }
+}
+.card {
+  width:40%;
+  margin-bottom:40px;
+}
+.footer{
+  &__img {
+    padding: 40px 40px 25px;
+  }
+  &__list {
+    padding: 0 40px 40px;
+  }
+}
+
+}
+@media screen and (min-width:992px){
+  h1 {
+    font-size: 22px;
+  }
+  .card {
+    width:22%;
+    margin-bottom: 10px;
+  }
+  .restaurants {
+    h1 {
+      margin: 50px 40px 30px;
+    }
+  }
+  .footer {
+    &__img {
+      padding: 45px 40px 25px;
+    }
+  }
 }
