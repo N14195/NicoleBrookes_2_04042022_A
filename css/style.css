@@ -1,12 +1,3 @@
-/*FONTS*/
-/*COLOURS*/
-/*GRADIENTS*/
-/*FONT COLOURS*/
-/*BACKGROUND COLOURS*/
-/*BOX-SHADOWS*/
-/*MIXINS FOR OPACITY TRANSITIONS*/
-/*ANIMATION MIXINS*/
-/*GRADIENT BUTTON*/
 /*FAVOURITE ICONS*/
 @keyframes favourite-btn {
   from {
@@ -269,7 +260,6 @@
   transform-origin: left;
 }
 
-/*TEXT*/
 h1 {
   margin: 0;
   font-size: 20px;
@@ -303,7 +293,6 @@ p {
   font-weight: 300;
 }
 
-/*BUTTONS*/
 .btn {
   position: relative;
   z-index: 1;
@@ -327,7 +316,6 @@ body {
   align-items: center;
 }
 
-/*HEADER*/
 .header {
   width: 100%;
   height: 65px;

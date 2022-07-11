@@ -1,31 +1,25 @@
-/*FONTS*/
 $font-main: "Roboto", sans-serif;
 $font-logo: "Shrikhand", cursive;
 
-/*COLOURS*/
 $clr-primary:#9356DC;
 $clr-secondary:#FF79DA;
 $clr-tertiary:#99E2D0;
 
-/*GRADIENTS*/
-$gradient-btn:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
-$gradient-fav:linear-gradient(to top right, $clr-secondary, $clr-primary);
-$gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
+$clr-dark-bg:#353535;
+$clr-med-bg:#eaeaea;
+$clr-light-bg:#f6f6f6;
+$clr-white-bg:white;
 
-/*FONT COLOURS*/
 $clr-font-main:black;
 $clr-font-dark:lighten($clr-font-main,20%);
 $clr-font-med:lighten($clr-font-main,50%);
 $clr-font-light:lighten($clr-font-main,80%);
 $clr-font-white:white;
 
-/*BACKGROUND COLOURS*/
-$clr-dark-bg:#353535;
-$clr-med-bg:#eaeaea;
-$clr-light-bg:#f6f6f6;
-$clr-white-bg:white;
+$gradient-btn:linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+$gradient-fav:linear-gradient(to top right, $clr-secondary, $clr-primary);
+$gradient-hover:linear-gradient(to bottom right, lighten($clr-secondary,5%), lighten($clr-primary,3%));
 
-/*BOX-SHADOWS*/
 $shadow-header:0 2px 4px 0 rgb(0 0 0 / 20%);
 $shadow-btn:1px 4px 8px 0 rgb(0 0 0 / 25%);
 $shadow-btn-hover:2px 4px 12px 0 rgb(0 0 0 / 28%);
@@ -33,7 +27,6 @@ $shadow-card:1px 4px 10px 2px rgb(0 0 0 / 10%);
 $shadow-card-hover:1px 4px 12px 3px rgb(0 0 0 / 15%);
 $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
 
-/*MIXINS FOR OPACITY TRANSITIONS*/
 @mixin under-layer{
     position:relative;
     z-index:1;
@@ -44,8 +37,6 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
         opacity:0;
         z-index:-1;
 }
-
-/*ANIMATION MIXINS*/
 @mixin menu-page-load-animation ($delay){
     animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
 }
@@ -56,9 +47,7 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
     transform:scaleX(1);
           animation:$keyframes 1500ms 500ms backwards infinite cubic-bezier(0,1.19,0,.95);
           transform-origin:left;
-  }
-
-/*GRADIENT BUTTON*/
+}
 @mixin gradient-btn{
     color:$clr-font-white;
     background:$gradient-btn;
@@ -333,7 +322,6 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
       
 }
 
-/*TEXT*/
 h1 {
     margin:0;
     font-size:20px;
@@ -361,7 +349,7 @@ p {
     margin:0;
     font-weight:300;
 }
-/*BUTTONS*/
+
 .btn {
     @include under-layer;
     &:hover{
@@ -373,6 +361,7 @@ p {
         @include top-layer;
     }
 }
+
 body {
     font-family: $font-main;
     color: $clr-font-main;
@@ -381,7 +370,7 @@ body {
     flex-flow: column nowrap;
     align-items: center;
   }
-/*HEADER*/
+
 .header {
     width:100%;
     height:65px;
@@ -410,6 +399,7 @@ body {
         box-shadow:none;
     }
 }
+
 /*HOMEPAGE ELEMENTS*/
 .location {
     display:flex;
@@ -469,7 +459,7 @@ body {
         border-radius:15px;
         z-index:-1;
         &1{
-          @include instructions-animation (instructions_opacity_1,);
+          @include instructions-animation (instructions_opacity_1);
         }
         &2{
           @include instructions-animation (instructions_opacity_2);
