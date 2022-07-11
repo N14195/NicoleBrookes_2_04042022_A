@@ -575,6 +575,18 @@ body {
 }
 .menu-page-bg--bastille {
   background-image: url(/img/bastille.jpg);
+  background-position: 0px -275px;
+}
+.menu-page-bg--enchanted {
+  background-image: url(/img/enchanted-plate.jpg);
+  background-position: 0px -570px;
+}
+.menu-page-bg--full-palette {
+  background-image: url(/img/full-palette.jpg);
+}
+.menu-page-bg--gourmand {
+  background-image: url(/img/gourmand.jpg);
+  background-position: 0px -285px;
 }
 
 .favourite {
@@ -716,6 +728,9 @@ body {
 .course__menu-item3 {
   animation: opacity_0-100 1400ms 2800ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
+.course__menu-item4 {
+  animation: opacity_0-100 1400ms 3200ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
+}
 .course__menu-item:hover .course__menu-item--price {
   transform: translate(-60px);
 }
@@ -815,6 +830,15 @@ body {
   .menu-page-bg--bastille {
     background-position: 0px -195px;
   }
+  .menu-page-bg--enchanted {
+    background-position: 0px -385px;
+  }
+  .menu-page-bg--gourmand {
+    background-position: 0px -185px;
+  }
+  .menu-page-bg--full-palette {
+    background-position: 0px -110px;
+  }
   .restaurants {
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -866,6 +890,15 @@ body {
   }
   .menu-page-bg--bastille {
     background-position: 0px -340px;
+  }
+  .menu-page-bg--enchanted {
+    background-position: 0px -685px;
+  }
+  .menu-page-bg--gourmand {
+    background-position: 0px -350px;
+  }
+  .menu-page-bg--full-palette {
+    background-position: 0px -315px;
   }
   h1 {
     font-size: 22px;

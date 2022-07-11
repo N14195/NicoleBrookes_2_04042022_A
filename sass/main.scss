@@ -609,6 +609,18 @@ body {
     height:270px;
     &--bastille{
         background-image:url(/img/bastille.jpg);
+        background-position: 0px -275px;
+    }
+    &--enchanted{
+      background-image:url(/img/enchanted-plate.jpg);
+      background-position: 0px -570px;
+    }
+    &--full-palette{
+      background-image:url(/img/full-palette.jpg);
+    }
+    &--gourmand{
+      background-image:url(/img/gourmand.jpg);
+      background-position: 0px -285px;
     }
     }
 .favourite{
@@ -744,6 +756,9 @@ body {
         &3{
             @include menu-page-load-animation(2800ms);
         }
+        &4{
+          @include menu-page-load-animation(3200ms);
+      }
         &:hover{
             .course__menu-item--price{
                 transform:translate(-60px);
@@ -836,6 +851,15 @@ body {
     &--bastille {
       background-position: 0px -195px;
     }
+    &--enchanted {
+      background-position: 0px -385px;
+    }
+    &--gourmand {
+      background-position: 0px -185px;
+    }
+    &--full-palette {
+      background-position: 0px -110px;
+    }
   }
   .restaurants {
     flex-flow:row wrap; 
@@ -892,6 +916,15 @@ body {
     height:300px;
     &--bastille {
       background-position: 0px -340px;
+    }
+    &--enchanted {
+      background-position: 0px -685px;
+    }
+    &--gourmand {
+      background-position: 0px -350px;
+    }
+    &--full-palette {
+      background-position: 0px -315px;
     }
   }
   h1 {
