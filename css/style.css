@@ -226,7 +226,7 @@
   justify-content: center;
   background-color: white;
   opacity: 1;
-  animation: loading-screen 0s both;
+  animation: loading-screen 3s both;
 }
 
 .loading {
@@ -238,6 +238,7 @@
 
 .rice {
   font-size: 150px;
+  color: #333333;
   position: relative;
 }
 
@@ -431,15 +432,12 @@ body {
   z-index: -1;
 }
 .instructions__container--anim-bg1 {
-  transform: opacity(0);
   animation: instructions_opacity_1 6000ms both infinite linear;
 }
 .instructions__container--anim-bg2 {
-  transform: opacity(0);
   animation: instructions_opacity_2 6000ms both infinite linear;
 }
 .instructions__container--anim-bg3 {
-  transform: opacity(0);
   animation: instructions_opacity_3 6000ms both infinite linear;
 }
 .instructions__icons {
@@ -460,15 +458,12 @@ body {
   z-index: 2;
 }
 .instructions__icon--anim1 {
-  transform: opacity(0);
   animation: instructions_opacity_1 6000ms both infinite linear;
 }
 .instructions__icon--anim2 {
-  transform: opacity(0);
   animation: instructions_opacity_2 6000ms both infinite linear;
 }
 .instructions__icon--anim3 {
-  transform: opacity(0);
   animation: instructions_opacity_3 6000ms both infinite linear;
 }
 .instructions h1 {
@@ -673,7 +668,6 @@ body {
   font-weight: 300;
   margin: 0 0 5px 20px;
   font-size: 15px;
-  transform: opacity(0);
   animation: opacity_0-100 1400ms 1200ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course hr {
@@ -681,7 +675,6 @@ body {
   border: 0px none #99E2D0;
   border-top: 3px solid #99E2D0;
   margin: 0 0 0 20px;
-  transform: opacity(0);
   animation: opacity_0-100 1400ms 1600ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item {
@@ -715,15 +708,12 @@ body {
   transition: transform 750ms;
 }
 .course__menu-item1 {
-  transform: opacity(0);
   animation: opacity_0-100 1400ms 2000ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item2 {
-  transform: opacity(0);
   animation: opacity_0-100 1400ms 2400ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item3 {
-  transform: opacity(0);
   animation: opacity_0-100 1400ms 2800ms both cubic-bezier(0.71, 0.19, 0.32, 1.08);
 }
 .course__menu-item:hover .course__menu-item--price {
@@ -819,6 +809,12 @@ body {
   .title__btn {
     font-size: 15px;
   }
+  .menu-page-bg {
+    height: 285px;
+  }
+  .menu-page-bg--bastille {
+    background-position: 0px -195px;
+  }
   .restaurants {
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -842,14 +838,35 @@ body {
     width: 40%;
     margin-bottom: 40px;
   }
-  .footer__img {
-    padding: 40px 40px 25px;
+  .menu h1 {
+    font-size: 22px;
   }
-  .footer__list {
-    padding: 0 40px 40px;
+  .menu__heading {
+    padding: 45px 55px 45px 50px;
+  }
+  .menu .fa-heart {
+    font-size: 23px;
+  }
+  .course {
+    width: 95%;
+    padding: 16px;
+    margin: 0px 15px 55px;
   }
 }
+.footer__img {
+  padding: 40px 40px 25px;
+}
+.footer__list {
+  padding: 0 40px 40px;
+}
+
 @media screen and (min-width: 992px) {
+  .menu-page-bg {
+    height: 300px;
+  }
+  .menu-page-bg--bastille {
+    background-position: 0px -340px;
+  }
   h1 {
     font-size: 22px;
   }
@@ -859,6 +876,43 @@ body {
   }
   .restaurants h1 {
     margin: 50px 40px 30px;
+  }
+  .menu h1 {
+    font-size: 24px;
+  }
+  .menu__heading {
+    padding: 45px 100px 45px 70px;
+  }
+  .menu .fa-heart {
+    font-size: 24px;
+  }
+  .course {
+    margin: 0px 50px 55px;
+  }
+  .course__btn {
+    width: 200px;
+    font-size: 16px;
+  }
+  .course h2 {
+    font-size: 16px;
+  }
+  .course__selected {
+    height: 75px;
+  }
+  .course__menu-item {
+    height: 75px;
+  }
+  .course__menu-item h3 {
+    font-size: 16px;
+    padding: 16px 0 10px 15px;
+  }
+  .course__menu-item h4 {
+    padding: 40px 25px 0 0;
+    font-size: 13px;
+  }
+  .course__menu-item p {
+    font-size: 12px;
+    padding: 0 0 16px 15px;
   }
   .footer__img {
     padding: 45px 40px 25px;

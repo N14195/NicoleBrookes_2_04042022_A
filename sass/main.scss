@@ -47,11 +47,9 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
 
 /*ANIMATION MIXINS*/
 @mixin menu-page-load-animation ($delay){
-    transform:opacity(0);
     animation:opacity_0-100 1400ms $delay both cubic-bezier(0.71, 0.19, 0.32, 1.08); 
 }
 @mixin instructions-animation ($keyframes) {
-    transform:opacity(0);
     animation: $keyframes 6000ms both infinite linear; 
 }
 @mixin loading-rice-animation ($keyframes){
@@ -300,7 +298,7 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
       justify-content:center;
       background-color: white;
       opacity:1;
-      animation:loading-screen 0s both;
+      animation:loading-screen 3s both;
   }
 .loading{
     padding-top: 150px;
@@ -310,6 +308,7 @@ $shadow-new:2px 1px 4px 0px rgb(0 0 0 / 12%);
   }
 .rice{
       font-size:150px;
+      color:$clr-font-dark;
       position:relative;
     }
 .square{
@@ -832,6 +831,12 @@ body {
       font-size:15px;
     }
   }
+  .menu-page-bg{
+    height:285px;
+    &--bastille {
+      background-position: 0px -195px;
+    }
+  }
   .restaurants {
     flex-flow:row wrap; 
     justify-content: space-evenly;
@@ -857,6 +862,23 @@ body {
   width:40%;
   margin-bottom:40px;
 }
+.menu {
+  h1 {
+    font-size: 22px;
+  }
+  &__heading {
+    padding: 45px 55px 45px 50px;
+  }
+  .fa-heart {
+    font-size:23px;
+  }
+}
+.course {
+  width:95%;
+  padding:16px;
+  margin: 0px 15px 55px;
+  }
+}
 .footer{
   &__img {
     padding: 40px 40px 25px;
@@ -865,9 +887,13 @@ body {
     padding: 0 40px 40px;
   }
 }
-
-}
 @media screen and (min-width:992px){
+  .menu-page-bg{
+    height:300px;
+    &--bastille {
+      background-position: 0px -340px;
+    }
+  }
   h1 {
     font-size: 22px;
   }
@@ -880,6 +906,46 @@ body {
       margin: 50px 40px 30px;
     }
   }
+  .menu {
+  h1 {
+    font-size: 24px;
+  }
+  &__heading {
+    padding: 45px 100px 45px 70px;
+  }
+  .fa-heart {
+    font-size:24px;
+  }
+}
+.course {
+  margin: 0px 50px 55px;
+  &__btn{
+    width:200px;
+    font-size:16px;
+  }
+  h2 {
+    font-size:16px;
+  }
+  &__selected {
+    height:75px;
+  }
+  &__menu-item {
+    height:75px;
+    h3{
+      font-size: 16px;
+      padding: 16px 0 10px 15px;
+    }
+    h4{
+        padding: 40px 25px 0 0;
+        font-size:13px;
+    }
+    p{
+      font-size: 12px;
+      padding: 0 0 16px 15px;
+    }
+  }
+}
+
   .footer {
     &__img {
       padding: 45px 40px 25px;
