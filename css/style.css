@@ -562,18 +562,18 @@ body {
   height: 270px;
 }
 .menu-page-bg--bastille {
-  background-image: url(/img/bastille.jpg);
+  background-image: url(../img/bastille.jpg);
   background-position: 0px -275px;
 }
 .menu-page-bg--enchanted {
-  background-image: url(/img/enchanted-plate.jpg);
+  background-image: url(../img/enchanted-plate.jpg);
   background-position: 0px -570px;
 }
 .menu-page-bg--full-palette {
-  background-image: url(/img/full-palette.jpg);
+  background-image: url(../img/full-palette.jpg);
 }
 .menu-page-bg--gourmand {
-  background-image: url(/img/gourmand.jpg);
+  background-image: url(../img/gourmand.jpg);
   background-position: 0px -285px;
 }
 

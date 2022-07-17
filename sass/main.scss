@@ -598,18 +598,18 @@ body {
     width:100%;
     height:270px;
     &--bastille{
-        background-image:url(/img/bastille.jpg);
+        background-image:url(../img/bastille.jpg);
         background-position: 0px -275px;
     }
     &--enchanted{
-      background-image:url(/img/enchanted-plate.jpg);
+      background-image:url(../img/enchanted-plate.jpg);
       background-position: 0px -570px;
     }
     &--full-palette{
-      background-image:url(/img/full-palette.jpg);
+      background-image:url(../img/full-palette.jpg);
     }
     &--gourmand{
-      background-image:url(/img/gourmand.jpg);
+      background-image:url(../img/gourmand.jpg);
       background-position: 0px -285px;
     }
     }
